@@ -731,181 +731,122 @@ for (var i = 0; i < els.length; i++) obs.observe(els[i]);
 
 <script>
 (function(){
-  var lang='es',busy=false,started=false;
+  var lang="es",busy=false,started=false;
   var QUICK={
-    es:['Cómo enviar una carta','Llenar un sobre','Carta internacional','Mi primer penpal','¿Cuánto cuesta?','Cuánto tarda'],
-    en:['How to send a letter','Address an envelope','International letter','My first penpal','How much does it cost?','How long does it take']
+    es:["Como enviar una carta","Llenar un sobre","Carta internacional","Mi primer penpal","Cuanto cuesta","Cuanto tarda"],
+    en:["How to send a letter","Address an envelope","International letter","My first penpal","How much does it cost","How long does it take"]
   };
   var WELCOME={
-    es:'¡Hola! 👋 Soy Cartita, tu asistente postal de PeruCollector. Te ayudo con cartas, sobres y penpals. ¿En qué puedo ayudarte?',
-    en:"Hi! 👋 I'm Cartita, PeruCollector's postal assistant. I help with letters, envelopes and penpaling. What can I help you with?"
+    es:"Hola! Soy Cartita, tu asistente postal de PeruCollector. Te ayudo con cartas, sobres y penpals. En que puedo ayudarte?",
+    en:"Hi! I am Cartita, PeruCollector postal assistant. I help with letters, envelopes and penpaling. What can I help you with?"
   };
-
-  var ANSWERS = {
-    es: {
-      'carta': '📮 Para enviar una carta en Perú ve a cualquier oficina de Serpost con tu sobre cerrado. Diles si es nacional o internacional, paga el franqueo y listo. Te dan comprobante de envío. ¡Así de simple!',
-      'sobre': '✉️ Cómo llenar un sobre:
-- Arriba izquierda: tus datos (remitente)
-- Centro/derecha: datos del destinatario (nombre, dirección, ciudad, país)
-- Arriba derecha: la estampilla
-¡Y listo para enviar!',
-      'internacional': '✈️ Para cartas internacionales desde Perú:
-- Ve a Serpost con tu carta
-- Costo aproximado: S/3 a S/8 según el país
-- Tiempo: 2 a 6 semanas
-- Necesitas estampilla internacional
-También puedes encargar postales en PeruCollector.com 💌',
-      'penpal': '🌍 Para conseguir tu primer penpal:
-- Regístrate en PenPalWorld.com o Slowly app
-- Escribe una presentación breve: nombre, ciudad, hobbies
-- Sé auténtico y paciente
-- Usa P.O. Box al inicio por seguridad
-¡Es una experiencia increíble!',
-      'cuesta': '💰 Costos aproximados desde Perú:
-- Carta nacional: S/1 a S/2
-- Carta a Latinoamérica: S/3 a S/5
-- Carta a Europa/USA: S/5 a S/8
-Para postales escritas a mano visita PeruCollector.com — $10 USD con envío incluido 💌',
-      'tarda': '⏰ Tiempos estimados desde Perú:
-- Nacional: 3 a 7 días
-- Latinoamérica: 2 a 4 semanas
-- Europa: 3 a 6 semanas
-- USA/Canadá: 3 a 5 semanas
-Serpost es el correo oficial del Perú.',
-      'default': '😊 Puedo ayudarte con:
-- Cómo enviar cartas desde Perú
-- Llenar sobres correctamente
-- Cartas internacionales
-- Empezar con penpals
-- Costos y tiempos de envío
-
-También visita PeruCollector.com para postales escritas a mano desde Trujillo 💌'
+  var ANS={
+    es:{
+      carta:"Para enviar una carta en Peru ve a cualquier oficina de Serpost con tu sobre cerrado. Diles si es nacional o internacional, paga el franqueo y listo. Te dan comprobante de envio.",
+      sobre:"Como llenar un sobre: Arriba izquierda tus datos (remitente). Centro o derecha datos del destinatario (nombre, direccion, ciudad, pais). Arriba derecha la estampilla.",
+      inter:"Para cartas internacionales desde Peru: Ve a Serpost. Costo aproximado S/3 a S/8 segun el pais. Tiempo 2 a 6 semanas. Tambien puedes pedir postales escritas a mano en PeruCollector.com",
+      penpal:"Para tu primer penpal: Registrate en PenPalWorld.com o la app Slowly. Escribe una presentacion breve con tu nombre, ciudad y hobbies. Se autentico y paciente.",
+      costo:"Costos desde Peru: Carta nacional S/1 a S/2. Latinoamerica S/3 a S/5. Europa y USA S/5 a S/8. Para postales escritas a mano visita PeruCollector.com por $10 USD.",
+      tiempo:"Tiempos desde Peru: Nacional 3 a 7 dias. Latinoamerica 2 a 4 semanas. Europa 3 a 6 semanas. USA y Canada 3 a 5 semanas.",
+      def:"Puedo ayudarte con: enviar cartas desde Peru, llenar sobres, cartas internacionales, conseguir penpals, costos y tiempos. Tambien visita PeruCollector.com para postales desde Trujillo."
     },
-    en: {
-      'letter': '📮 To send a letter in Peru, go to any Serpost office with your sealed envelope. Tell them if it's domestic or international, pay the postage and you're done. They give you a receipt. Simple!',
-      'envelope': '✉️ How to address an envelope:
-- Top left: your details (return address)
-- Center/right: recipient's name, address, city, country
-- Top right: the stamp
-Ready to send!',
-      'international': '✈️ For international letters from Peru:
-- Go to Serpost with your letter
-- Approximate cost: S/3 to S/8 depending on country
-- Time: 2 to 6 weeks
-- You need an international stamp
-You can also order handwritten postcards at PeruCollector.com 💌',
-      'penpal': '🌍 To find your first penpal:
-- Sign up at PenPalWorld.com or Slowly app
-- Write a short intro: name, city, hobbies
-- Be authentic and patient
-- Use a P.O. Box at first for safety
-It's an amazing experience!',
-      'cost': '💰 Approximate costs from Peru:
-- Domestic letter: S/1 to S/2
-- Latin America: S/3 to S/5
-- Europe/USA: S/5 to S/8
-For handwritten postcards visit PeruCollector.com — $10 USD shipping included 💌',
-      'long': '⏰ Estimated times from Peru:
-- Domestic: 3 to 7 days
-- Latin America: 2 to 4 weeks
-- Europe: 3 to 6 weeks
-- USA/Canada: 3 to 5 weeks
-Serpost is Peru's official postal service.',
-      'default': '😊 I can help you with:
-- How to send letters from Peru
-- Addressing envelopes correctly
-- International letters
-- Starting with penpals
-- Costs and delivery times
-
-Also visit PeruCollector.com for handwritten postcards from Trujillo 💌'
+    en:{
+      carta:"To send a letter in Peru go to any Serpost office with your sealed envelope. Tell them if it is domestic or international, pay the postage and done. They give you a receipt.",
+      sobre:"How to address an envelope: Top left your details (return address). Center or right recipient name, address, city, country. Top right the stamp.",
+      inter:"For international letters from Peru: Go to Serpost. Approximate cost S/3 to S/8 depending on country. Time 2 to 6 weeks. You can also order handwritten postcards at PeruCollector.com",
+      penpal:"To find your first penpal: Sign up at PenPalWorld.com or the Slowly app. Write a short intro with your name, city and hobbies. Be authentic and patient.",
+      costo:"Costs from Peru: Domestic S/1 to S/2. Latin America S/3 to S/5. Europe and USA S/5 to S/8. For handwritten postcards visit PeruCollector.com for $10 USD.",
+      tiempo:"Times from Peru: Domestic 3 to 7 days. Latin America 2 to 4 weeks. Europe 3 to 6 weeks. USA and Canada 3 to 5 weeks.",
+      def:"I can help you with: sending letters from Peru, addressing envelopes, international letters, finding penpals, costs and times. Also visit PeruCollector.com for postcards from Trujillo."
     }
   };
 
-  function getReply(txt) {
-    var t = txt.toLowerCase();
-    if (lang === 'es') {
-      if (t.match(/carta|enviar|mandar|correo|serpost/)) return ANSWERS.es.carta;
-      if (t.match(/sobre|dirección|llenar|escribir|remitente/)) return ANSWERS.es.sobre;
-      if (t.match(/internacional|extranjero|otro país|mundo/)) return ANSWERS.es.internacional;
-      if (t.match(/penpal|pen pal|amigo|corresponsal|conocer/)) return ANSWERS.es.penpal;
-      if (t.match(/cuesta|precio|costo|cobr|pagar|sol|dólar/)) return ANSWERS.es.cuesta;
-      if (t.match(/tarda|demora|tiempo|semana|días|cuando llega/)) return ANSWERS.es.tarda;
-      return ANSWERS.es.default;
-    } else {
-      if (t.match(/letter|send|mail|post|serpost/)) return ANSWERS.en.letter;
-      if (t.match(/envelope|address|fill|write|return/)) return ANSWERS.en.envelope;
-      if (t.match(/international|abroad|foreign|world/)) return ANSWERS.en.international;
-      if (t.match(/penpal|pen pal|friend|correspond/)) return ANSWERS.en.penpal;
-      if (t.match(/cost|price|pay|dollar|sol|much/)) return ANSWERS.en.cost;
-      if (t.match(/long|time|week|days|arrive|take/)) return ANSWERS.en.long;
-      return ANSWERS.en.default;
-    }
+  function getReply(txt){
+    var t=txt.toLowerCase();
+    var a=lang==="es"?ANS.es:ANS.en;
+    if(t.match(/carta|letter|send|enviar|mandar|correo|serpost|mail/)) return a.carta;
+    if(t.match(/sobre|envelope|address|direccion|llenar|fill/)) return a.sobre;
+    if(t.match(/internacional|international|extranjero|abroad|foreign/)) return a.inter;
+    if(t.match(/penpal|pen pal|amigo|friend|corresponsal/)) return a.penpal;
+    if(t.match(/cuesta|cost|precio|price|pagar|pay|cuanto|much/)) return a.costo;
+    if(t.match(/tarda|long|tiempo|time|semana|week|dias|days/)) return a.tiempo;
+    return a.def;
   }
 
   setTimeout(function(){
-    var el=document.getElementById('c-bubble');
-    el.innerHTML=lang==='es'?'¡Hola! Soy Cartita 💌<br>¿Te ayudo con tus cartas?':"Hi! I'm Cartita 💌<br>Need help with letters?";
-    el.style.display='block';
-    setTimeout(function(){el.style.display='none';},6000);
+    var el=document.getElementById("c-bubble");
+    if(!el) return;
+    el.innerHTML=lang==="es"?"Hola! Soy Cartita, te ayudo con tus cartas":"Hi! I am Cartita, I help with your letters";
+    el.style.display="block";
+    setTimeout(function(){el.style.display="none";},6000);
   },2500);
 
   window.pcToggle=function(){
-    var w=document.getElementById('pc-window');
-    document.getElementById('c-bubble').style.display='none';
-    if(w.classList.contains('open')){w.classList.remove('open');}
-    else{w.classList.add('open');if(!started){started=true;pcMsg('b',WELCOME[lang]);pcQuick();}}
+    var w=document.getElementById("pc-window");
+    var b=document.getElementById("c-bubble");
+    if(b) b.style.display="none";
+    if(w.classList.contains("open")){w.classList.remove("open");}
+    else{w.classList.add("open");if(!started){started=true;pcMsg("b",WELCOME[lang]);pcQuick();}}
   };
 
   window.pcLang=function(l,btn){
     lang=l;
-    document.querySelectorAll('.pc-lg').forEach(function(b){b.classList.remove('on');});
-    btn.classList.add('on');
-    document.getElementById('pc-in').placeholder=l==='es'?'Pregúntale a Cartita...':'Ask Cartita...';
+    document.querySelectorAll(".pc-lg").forEach(function(b){b.classList.remove("on");});
+    btn.classList.add("on");
+    var inp=document.getElementById("pc-in");
+    if(inp) inp.placeholder=l==="es"?"Preguntale a Cartita...":"Ask Cartita...";
     pcQuick();
   };
 
   function pcQuick(){
-    var el=document.getElementById('pc-quick');
+    var el=document.getElementById("pc-quick");
+    if(!el) return;
     el.innerHTML=QUICK[lang].map(function(q){
-      return '<button class="pc-qb" onclick="pcAsk(\''+q.replace(/'/g,"\\'")+'\')">' +q+'</button>';
-    }).join('');
+      return "<button class='pc-qb' onclick='pcAsk(""+q+"")'>" +q+"</button>";
+    }).join("");
   }
 
   function pcMsg(role,text){
-    var el=document.getElementById('pc-msgs');
-    var d=document.createElement('div');
-    d.className='pc-m '+(role==='b'?'b':'u');
-    d.innerHTML='<div class="pc-mav">'+(role==='b'?'✉️':'👤')+'</div><div class="pc-mt">'+text.replace(/\n/g,'<br>')+'</div>';
+    var el=document.getElementById("pc-msgs");
+    if(!el) return;
+    var d=document.createElement("div");
+    d.className="pc-m "+(role==="b"?"b":"u");
+    d.innerHTML="<div class='pc-mav'>"+(role==="b"?"envelope":"person")+"</div><div class='pc-mt'>"+text+"</div>";
     el.appendChild(d);el.scrollTop=el.scrollHeight;
   }
 
   function pcTyping(){
-    var el=document.getElementById('pc-msgs');
-    var d=document.createElement('div');
-    d.className='pc-m b';d.id='pc-t';
-    d.innerHTML='<div class="pc-mav">✉️</div><div class="pc-mt"><div class="pc-typing"><span></span><span></span><span></span></div></div>';
+    var el=document.getElementById("pc-msgs");
+    if(!el) return;
+    var d=document.createElement("div");
+    d.className="pc-m b";d.id="pc-t";
+    d.innerHTML="<div class='pc-mav'>+</div><div class='pc-mt'><div class='pc-typing'><span></span><span></span><span></span></div></div>";
     el.appendChild(d);el.scrollTop=el.scrollHeight;
   }
 
-  function pcNoTyping(){var t=document.getElementById('pc-t');if(t)t.remove();}
+  function pcNoTyping(){var t=document.getElementById("pc-t");if(t)t.remove();}
 
   window.pcSend=function(){
-    var inp=document.getElementById('pc-in');
+    var inp=document.getElementById("pc-in");
+    if(!inp) return;
     var txt=inp.value.trim();
-    if(!txt||busy)return;
-    inp.value='';pcMsg('u',txt);pcCall(txt);
+    if(!txt||busy) return;
+    inp.value="";pcMsg("u",txt);pcCall(txt);
   };
 
-  window.pcAsk=function(q){document.getElementById('pc-in').value=q;pcSend();};
+  window.pcAsk=function(q){
+    var inp=document.getElementById("pc-in");
+    if(inp){inp.value=q;}
+    pcSend();
+  };
 
   function pcCall(txt){
     busy=true;pcTyping();
     setTimeout(function(){
       pcNoTyping();
-      pcMsg('b', getReply(txt));
+      pcMsg("b",getReply(txt));
       busy=false;
-    }, 600);
+    },600);
   }
 })();
 </script>
