@@ -731,17 +731,117 @@ for (var i = 0; i < els.length; i++) obs.observe(els[i]);
 
 <script>
 (function(){
-  var GEMINI_KEY='PEGA_TU_KEY_AQUI';
   var lang='es',busy=false,started=false;
   var QUICK={
-    es:['Cómo enviar una carta','Llenar un sobre','Carta internacional','Mi primer penpal','¿Cuánto cuesta?'],
-    en:['How to send a letter','Address an envelope','International letter','My first penpal','How much does it cost?']
+    es:['Cómo enviar una carta','Llenar un sobre','Carta internacional','Mi primer penpal','¿Cuánto cuesta?','Cuánto tarda'],
+    en:['How to send a letter','Address an envelope','International letter','My first penpal','How much does it cost?','How long does it take']
   };
   var WELCOME={
     es:'¡Hola! 👋 Soy Cartita, tu asistente postal de PeruCollector. Te ayudo con cartas, sobres y penpals. ¿En qué puedo ayudarte?',
     en:"Hi! 👋 I'm Cartita, PeruCollector's postal assistant. I help with letters, envelopes and penpaling. What can I help you with?"
   };
-  var SYSTEM='You are Cartita, a warm postal assistant for PeruCollector.com in Trujillo, Peru. Help with: sending letters from Peru via Serpost, addressing envelopes, penpaling, postage costs. Always respond in the same language as the user (Spanish or English). Keep answers short, warm and practical. Mention PeruCollector.com handwritten postcard service when relevant.';
+
+  var ANSWERS = {
+    es: {
+      'carta': '📮 Para enviar una carta en Perú ve a cualquier oficina de Serpost con tu sobre cerrado. Diles si es nacional o internacional, paga el franqueo y listo. Te dan comprobante de envío. ¡Así de simple!',
+      'sobre': '✉️ Cómo llenar un sobre:
+- Arriba izquierda: tus datos (remitente)
+- Centro/derecha: datos del destinatario (nombre, dirección, ciudad, país)
+- Arriba derecha: la estampilla
+¡Y listo para enviar!',
+      'internacional': '✈️ Para cartas internacionales desde Perú:
+- Ve a Serpost con tu carta
+- Costo aproximado: S/3 a S/8 según el país
+- Tiempo: 2 a 6 semanas
+- Necesitas estampilla internacional
+También puedes encargar postales en PeruCollector.com 💌',
+      'penpal': '🌍 Para conseguir tu primer penpal:
+- Regístrate en PenPalWorld.com o Slowly app
+- Escribe una presentación breve: nombre, ciudad, hobbies
+- Sé auténtico y paciente
+- Usa P.O. Box al inicio por seguridad
+¡Es una experiencia increíble!',
+      'cuesta': '💰 Costos aproximados desde Perú:
+- Carta nacional: S/1 a S/2
+- Carta a Latinoamérica: S/3 a S/5
+- Carta a Europa/USA: S/5 a S/8
+Para postales escritas a mano visita PeruCollector.com — $10 USD con envío incluido 💌',
+      'tarda': '⏰ Tiempos estimados desde Perú:
+- Nacional: 3 a 7 días
+- Latinoamérica: 2 a 4 semanas
+- Europa: 3 a 6 semanas
+- USA/Canadá: 3 a 5 semanas
+Serpost es el correo oficial del Perú.',
+      'default': '😊 Puedo ayudarte con:
+- Cómo enviar cartas desde Perú
+- Llenar sobres correctamente
+- Cartas internacionales
+- Empezar con penpals
+- Costos y tiempos de envío
+
+También visita PeruCollector.com para postales escritas a mano desde Trujillo 💌'
+    },
+    en: {
+      'letter': '📮 To send a letter in Peru, go to any Serpost office with your sealed envelope. Tell them if it's domestic or international, pay the postage and you're done. They give you a receipt. Simple!',
+      'envelope': '✉️ How to address an envelope:
+- Top left: your details (return address)
+- Center/right: recipient's name, address, city, country
+- Top right: the stamp
+Ready to send!',
+      'international': '✈️ For international letters from Peru:
+- Go to Serpost with your letter
+- Approximate cost: S/3 to S/8 depending on country
+- Time: 2 to 6 weeks
+- You need an international stamp
+You can also order handwritten postcards at PeruCollector.com 💌',
+      'penpal': '🌍 To find your first penpal:
+- Sign up at PenPalWorld.com or Slowly app
+- Write a short intro: name, city, hobbies
+- Be authentic and patient
+- Use a P.O. Box at first for safety
+It's an amazing experience!',
+      'cost': '💰 Approximate costs from Peru:
+- Domestic letter: S/1 to S/2
+- Latin America: S/3 to S/5
+- Europe/USA: S/5 to S/8
+For handwritten postcards visit PeruCollector.com — $10 USD shipping included 💌',
+      'long': '⏰ Estimated times from Peru:
+- Domestic: 3 to 7 days
+- Latin America: 2 to 4 weeks
+- Europe: 3 to 6 weeks
+- USA/Canada: 3 to 5 weeks
+Serpost is Peru's official postal service.',
+      'default': '😊 I can help you with:
+- How to send letters from Peru
+- Addressing envelopes correctly
+- International letters
+- Starting with penpals
+- Costs and delivery times
+
+Also visit PeruCollector.com for handwritten postcards from Trujillo 💌'
+    }
+  };
+
+  function getReply(txt) {
+    var t = txt.toLowerCase();
+    if (lang === 'es') {
+      if (t.match(/carta|enviar|mandar|correo|serpost/)) return ANSWERS.es.carta;
+      if (t.match(/sobre|dirección|llenar|escribir|remitente/)) return ANSWERS.es.sobre;
+      if (t.match(/internacional|extranjero|otro país|mundo/)) return ANSWERS.es.internacional;
+      if (t.match(/penpal|pen pal|amigo|corresponsal|conocer/)) return ANSWERS.es.penpal;
+      if (t.match(/cuesta|precio|costo|cobr|pagar|sol|dólar/)) return ANSWERS.es.cuesta;
+      if (t.match(/tarda|demora|tiempo|semana|días|cuando llega/)) return ANSWERS.es.tarda;
+      return ANSWERS.es.default;
+    } else {
+      if (t.match(/letter|send|mail|post|serpost/)) return ANSWERS.en.letter;
+      if (t.match(/envelope|address|fill|write|return/)) return ANSWERS.en.envelope;
+      if (t.match(/international|abroad|foreign|world/)) return ANSWERS.en.international;
+      if (t.match(/penpal|pen pal|friend|correspond/)) return ANSWERS.en.penpal;
+      if (t.match(/cost|price|pay|dollar|sol|much/)) return ANSWERS.en.cost;
+      if (t.match(/long|time|week|days|arrive|take/)) return ANSWERS.en.long;
+      return ANSWERS.en.default;
+    }
+  }
 
   setTimeout(function(){
     var el=document.getElementById('c-bubble');
@@ -799,25 +899,13 @@ for (var i = 0; i < els.length; i++) obs.observe(els[i]);
 
   window.pcAsk=function(q){document.getElementById('pc-in').value=q;pcSend();};
 
-  async function pcCall(txt){
+  function pcCall(txt){
     busy=true;pcTyping();
-    try{
-      var res=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key='+GEMINI_KEY,{
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({
-          contents:[{role:'user',parts:[{text:SYSTEM+'\n\nUser: '+txt}]}],
-          generationConfig:{maxOutputTokens:400,temperature:0.7}
-        })
-      });
-      var data=await res.json();
-      var reply=data.candidates&&data.candidates[0]&&data.candidates[0].content&&data.candidates[0].content.parts&&data.candidates[0].content.parts[0]?data.candidates[0].content.parts[0].text:(lang==='es'?'Lo siento, intenta de nuevo.':'Sorry, please try again.');
-      pcNoTyping();pcMsg('b',reply);
-    }catch(e){
+    setTimeout(function(){
       pcNoTyping();
-      pcMsg('b',lang==='es'?'Error de conexión. Intenta de nuevo.':'Connection error. Please try again.');
-    }
-    busy=false;
+      pcMsg('b', getReply(txt));
+      busy=false;
+    }, 600);
   }
 })();
 </script>
