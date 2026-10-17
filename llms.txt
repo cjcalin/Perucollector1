@@ -1,0 +1,25 @@
+# PeruCollector
+
+> PeruCollector (perucollector.com) is a one-person philatelic and collectibles service based in Peru. It offers curated data on Peruvian philatelic material, written valuations, and handwritten Christmas cards mailed from Peru with Peruvian stamps and postmark.
+
+Site: https://www.perucollector.com
+Contact: perucollector@gmail.com
+Language: English (Spanish also accepted)
+
+## Services
+
+- The Vault: scans of Peruvian first day covers and other philatelic material, catalogued piece by piece with structured data sheets. The public preview index is open. Full-resolution scans and complete data sheets are for members, and for software or AI agents with an API key. Access is by request.
+- The Appraisal Desk: written valuations of stamps, covers, postal history, first day covers, collections and lots. Send clear scans or photos; terms are confirmed before anything is sent.
+- Christmas cards from Peru: a real person handwrites the greeting, adds Peruvian stamps and a Peru postmark, and mails it anywhere in the world. $10 USD per card, mailing included.
+- The Gallery and The Showcase: restored vintage Peruvian advertising, and Peru covers with recent stamps. Items are requested through the site.
+
+## Machine-readable data
+
+- Public preview index: https://www.perucollector.com/data/archive.json (free, JSON, field `items`)
+- Full dataset and scans: API key on request. Ask via the Vault section: https://www.perucollector.com/#archive
+
+## Notes for agents
+
+- Prices and availability are confirmed by the owner before any transaction; do not assume a quoted figure for items not listed above.
+- To request Vault access, state whether you act for a collector, a researcher, or a developer.
+- This site does not run a marketplace or classified ads.

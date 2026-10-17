@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Postcards from Peru | perucollector.com</title>
-<meta name="description" content="Real handwritten postcards from Trujillo, Peru — stamped, postmarked and mailed worldwide for $10 USD.">
+<meta name="description" content="Real handwritten postcards from Peru — stamped, postmarked and mailed worldwide for $10 USD.">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@300;400;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -212,49 +212,68 @@ footer{background:var(--ink);color:rgba(255,255,255,.6);padding:44px 24px;text-a
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 
-/* PENPAL SECTION */
-.penpal-section{padding:80px 24px;background:#fff;border-top:3px solid var(--red)}
-.penpal-inner{max-width:980px;margin:0 auto}
-.penpal-hero{text-align:center;margin-bottom:56px}
-.penpal-tag{font-size:.6rem;letter-spacing:4px;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:12px}
-.penpal-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);color:var(--ink);margin-bottom:8px;line-height:1.2}
-.penpal-title em{color:var(--red);font-style:italic}
-.penpal-sub{font-size:.95rem;color:#666;line-height:1.8;max-width:580px;margin:0 auto 28px}
-.penpal-cta-group{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.penpal-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-bottom:56px}
-.penpal-step{background:var(--cream);border:1.5px solid var(--border);border-radius:10px;padding:24px 20px;text-align:center;transition:all .2s;position:relative}
-.penpal-step:hover{border-color:var(--red);transform:translateY(-3px);box-shadow:0 8px 24px var(--shadow)}
-.penpal-step-num{font-family:'Playfair Display',serif;font-size:2.5rem;font-style:italic;color:var(--red-light);line-height:1;margin-bottom:8px}
-.penpal-step-icon{font-size:1.6rem;margin-bottom:8px}
-.penpal-step-title{font-family:'Playfair Display',serif;font-size:1rem;color:var(--ink);margin-bottom:6px}
-.penpal-step-desc{font-size:.78rem;color:#666;line-height:1.7}
-.penpal-includes{background:var(--red);border-radius:12px;padding:40px 32px;margin-bottom:56px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
-@media(max-width:620px){.penpal-includes{grid-template-columns:1fr;gap:20px;padding:28px 20px}}
-.penpal-inc-title{font-family:'Playfair Display',serif;font-size:1.6rem;color:#fff;margin-bottom:8px}
-.penpal-inc-sub{font-size:.85rem;color:rgba(255,255,255,.8);line-height:1.7;margin-bottom:20px}
-.penpal-inc-list{display:flex;flex-direction:column;gap:10px}
-.penpal-inc-item{display:flex;align-items:center;gap:10px;font-size:.82rem;color:rgba(255,255,255,.9)}
-.penpal-inc-dot{width:6px;height:6px;background:rgba(255,255,255,.6);border-radius:50%;flex-shrink:0}
-.penpal-form-box{background:var(--cream);border:1.5px solid var(--border);border-radius:12px;padding:32px;max-width:640px;margin:0 auto}
-.penpal-form-title{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--ink);margin-bottom:4px;text-align:center}
-.penpal-form-sub{font-size:.78rem;color:#888;text-align:center;margin-bottom:24px}
-.pf-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-@media(max-width:500px){.pf-grid{grid-template-columns:1fr}}
-.pf-group{display:flex;flex-direction:column;gap:5px}
-.pf-group.full{grid-column:1/-1}
-.pf-label{font-size:.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:700}
-.pf-input,.pf-select,.pf-textarea{background:#fff;border:1.5px solid var(--border);color:var(--ink);font-family:'Lato',sans-serif;font-size:.88rem;padding:10px 13px;border-radius:6px;outline:none;width:100%;transition:border-color .15s}
-.pf-input:focus,.pf-select:focus,.pf-textarea:focus{border-color:var(--red)}
-.pf-textarea{resize:vertical;min-height:80px;line-height:1.6}
-.pf-btn{width:100%;padding:16px;background:var(--red);color:#fff;border:none;border-radius:8px;font-family:'Lato',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;margin-top:8px;transition:all .2s;box-shadow:0 4px 18px rgba(192,57,43,.3)}
-.pf-btn:hover{background:var(--red-dark);transform:translateY(-2px)}
-.pf-note{font-size:.65rem;color:#aaa;text-align:center;margin-top:10px;line-height:1.7}
-.pf-success{display:none;text-align:center;padding:28px 0}
-.pf-success.show{display:block}
-.pf-success-icon{font-size:3rem;margin-bottom:12px}
-.pf-success-title{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--red);margin-bottom:8px}
-.pf-success-sub{font-size:.85rem;color:#666;line-height:1.8}
+
+/* COVERS */
+.covers-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:28px}
+.cover-card{background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden;box-shadow:0 4px 18px var(--shadow);display:flex;flex-direction:column}
+.cover-img{aspect-ratio:4/3;background:var(--cream);display:flex;align-items:center;justify-content:center;font-size:2.4rem;overflow:hidden}
+.cover-img img{width:100%;height:100%;object-fit:cover;display:block}
+.cover-body{padding:16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.cover-title{font-family:'Playfair Display',serif;font-size:1.02rem;color:var(--ink)}
+.cover-meta{font-size:.78rem;color:var(--muted);line-height:1.6}
+.cover-btn{margin-top:auto;display:inline-block;text-align:center;padding:10px 14px;background:var(--red);color:#fff;border-radius:6px;font-size:.7rem;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;font-weight:400}
+.cover-btn:hover{background:var(--red-dark)}
+.xmas-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:18px;margin-top:28px;align-items:start}
+.xmas-card{background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden;box-shadow:0 4px 18px var(--shadow);display:flex;flex-direction:column}
+.xmas-card img{width:100%;height:auto;display:block}
+.xmas-card .cover-body{padding:12px 14px 14px}
+.covers-cta{text-align:center;margin-top:26px;font-size:.88rem;line-height:1.8;color:#555}
+.covers-cta a{color:var(--red);font-weight:700;text-decoration:none}
+
+/* NAV scroll on small screens */
+@media(max-width:760px){.nav-logo{display:none}.nav-links{overflow-x:auto;white-space:nowrap;scrollbar-width:none;max-width:100%}.nav-links::-webkit-scrollbar{display:none}}
+/* VALUATIONS / VINTAGE / ARCHIVE */
+.steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;margin-top:26px}
+.step-box{background:#fff;border:1px solid var(--border);border-radius:10px;padding:20px;text-align:center;box-shadow:0 4px 18px var(--shadow)}
+.step-box b{display:block;font-family:'Playfair Display',serif;color:var(--red);font-size:1.6rem;margin-bottom:6px}
+.step-box span{font-size:.84rem;line-height:1.7;color:#555}
+.sec-lead{text-align:center;max-width:580px;margin:0 auto;font-size:.92rem;line-height:1.85;color:#555}
+.api-box{margin-top:26px;background:var(--ink);color:#f3dcd8;border-radius:10px;padding:18px 20px;font-size:.78rem;line-height:1.7;overflow-x:auto}
+.api-box code{font-family:ui-monospace,Menlo,Consolas,monospace;color:#fff}
+.arch-empty{grid-column:1/-1;text-align:center;color:#888;font-size:.85rem;padding:20px}
+
+/* THE HOUSE (lobby) */
+.house{background:var(--cream);padding:96px 24px 72px;border-bottom:3px solid var(--red)}
+.house + .hero{padding-top:64px}
+.house-in{max-width:1020px;margin:0 auto}
+.house-top{display:grid;grid-template-columns:220px 1fr;gap:40px;align-items:center;margin-bottom:48px}
+@media(max-width:700px){.house-top{grid-template-columns:1fr;justify-items:center;text-align:center}}
+.host-frame{width:200px;padding:10px;border:3px solid var(--red);background:#fff;box-shadow:0 0 0 6px var(--cream),0 0 0 8px var(--red-light)}
+.host-photo{aspect-ratio:3/4;background:var(--red-light);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-style:italic;font-size:3rem;color:var(--red-dark);overflow:hidden}
+.host-photo img{width:100%;height:100%;object-fit:cover}
+.host-plaque{margin-top:18px;text-align:center;font-family:'Playfair Display',serif;font-size:.85rem;color:var(--red)}
+.house h2{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5vw,3.8rem);font-weight:700;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.house-say{font-family:'Dancing Script',cursive;font-size:1.55rem;color:var(--red);margin-bottom:10px}
+.house p.lead{font-size:.95rem;line-height:1.85;max-width:520px;color:#555}
+.plan{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+@media(max-width:700px){.plan{grid-template-columns:1fr}.plan .room{grid-column:auto!important}}
+.room{display:flex;flex-direction:column;gap:8px;padding:22px 22px 20px;border:1.5px solid var(--border);background:#fff;color:var(--ink);text-decoration:none;transition:border-color .2s,box-shadow .2s}
+.room:hover,.room:focus-visible{border-color:var(--red);box-shadow:0 8px 24px var(--shadow)}
+.room:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.room-sign{align-self:flex-start;padding:4px 12px;background:var(--red);color:#fff;font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700}
+.room-desc{font-size:.84rem;line-height:1.7;color:#666}
+.room-enter{margin-top:auto;font-size:.78rem;color:var(--red);font-weight:700}
+.room.w3{grid-column:span 3}.room.w2{grid-column:span 2}
+@media(prefers-reduced-motion:reduce){.room{transition:none}}
+
+/* CHRISTMAS CAMPAIGN */
+.room.w6{grid-column:span 6}
+.room.seasonal{background:var(--red);border-color:var(--red-dark)}
+.room.seasonal .room-sign{background:#fff;color:var(--red)}
+.room.seasonal .room-desc,.room.seasonal .room-enter{color:#fff}
+.xmas-note{max-width:560px;margin:18px auto 0;text-align:center;font-size:.8rem;line-height:1.7;color:#777}
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"PeruCollector","url":"https://www.perucollector.com","email":"perucollector@gmail.com"},{"@type":"Dataset","name":"PeruCollector Vault: Peruvian philatelic scans and curated data","description":"Scanned and catalogued Peruvian philatelic material, including first day covers, with structured data sheets. Public preview index; full data and scans by paid access.","url":"https://www.perucollector.com/#archive","creator":{"@type":"Organization","name":"PeruCollector"},"isAccessibleForFree":false},{"@type":"Service","name":"Christmas cards from Peru","description":"Handwritten Christmas cards with Peruvian stamps and postmark, mailed from Peru worldwide.","provider":{"@type":"Organization","name":"PeruCollector"},"offers":{"@type":"Offer","price":"10","priceCurrency":"USD"}},{"@type":"Service","name":"Philatelic valuations","provider":{"@type":"Organization","name":"PeruCollector"},"description":"Written valuations of stamps, covers and other philatelic items."}]}</script>
 </head>
 <body>
 
@@ -272,23 +291,226 @@ footer{background:var(--ink);color:rgba(255,255,255,.6);padding:44px 24px;text-a
 <nav>
   <div class="nav-logo">Postcards from Peru</div>
   <div class="nav-links">
-    <a class="nav-btn" href="#how">How it works</a>
-    <a class="nav-btn" href="#order">Order</a>
-    <a class="nav-btn" href="#penpal">Penpals</a>
+        <a class="nav-btn" href="#christmas">Christmas</a>
+    <a class="nav-btn" href="#archive">Vault</a>
+    <a class="nav-btn" href="#valuations">Valuations</a>
+    <a class="nav-btn" href="#vintage">Gallery</a>
+    <a class="nav-btn" href="#covers">Covers</a>
+        <a class="nav-btn" href="#order">Postcards</a>
     <a class="nav-wa" href="https://wa.me/51949494261" target="_blank">&#x1F4AC; WhatsApp</a>
   </div>
 </nav>
 
+<section class="house" id="house">
+  <div class="house-in">
+    <div class="house-top">
+      <div>
+        <div class="host-frame"><div class="host-photo"><!-- replace PC with: <img src="host.jpg" alt="Your host at PeruCollector"> -->PC</div></div>
+        <div class="host-plaque">Your host</div>
+      </div>
+      <div>
+        <div class="house-say">Welcome in, take your time.</div>
+        <h2>A station for collectors</h2>
+        <p class="lead">Search the vault, ask for a valuation, walk through the gallery, or send a real postcard. Every area has its own entrance, so head wherever you like.</p>
+      </div>
+    </div>
+    <div class="plan">
+    <a class="room w6 seasonal" href="#christmas"><span class="room-sign">Christmas from Peru</span><span class="room-desc">Your Christmas card handwritten in Peru, with Peruvian stamps and postmark, mailed to anyone in the world.</span><span class="room-enter">Send a card</span></a>
+    <a class="room w3" href="#archive"><span class="room-sign">The Vault</span><span class="room-desc">Scans of Peruvian first day covers and curated collecting data. Browse the index, unlock the full vault.</span><span class="room-enter">Request access</span></a>
+    <a class="room w3" href="#valuations"><span class="room-sign">The Appraisal Desk</span><span class="room-desc">Bring your stamps and philatelic items for a written valuation.</span><span class="room-enter">Ask for a valuation</span></a>
+    <a class="room w2" href="#vintage"><span class="room-sign">The Gallery</span><span class="room-desc">Vintage Peruvian advertising, carefully restored.</span><span class="room-enter">Walk through</span></a>
+    <a class="room w2" href="#covers"><span class="room-sign">The Showcase</span><span class="room-desc">Peru covers with recent stamps, for those who want the real piece.</span><span class="room-enter">See the covers</span></a>
+    <a class="room w2" href="#order"><span class="room-sign">The Post Office</span><span class="room-desc">Handwritten postcards, stamped and postmarked in Peru, shipped on request.</span><span class="room-enter">Go to the counter</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="christmas">
+  <div class="sec-inner reveal">
+    <div class="sec-eyebrow">Christmas campaign</div>
+    <h2 class="sec-title">Christmas cards from Peru</h2>
+    <p class="sec-lead">A real person in Peru handwrites your Christmas greeting, adds Peruvian stamps and a Peru postmark, and mails it to anyone you choose, anywhere in the world. $10 USD per card, mailing included.</p>
+    <div class="xmas-grid">
+      <div class="xmas-card">
+        <img src="images/navidad/tarjeta-1.jpg" alt="Christmas card: smiling snowman with a red scarf and a robin on his nose" loading="lazy">
+        <div class="cover-body">
+          <div class="cover-title">Design 1</div>
+          <div class="cover-meta">Snowman and robin</div>
+          <a class="cover-btn" href="https://wa.me/51949494261?text=Hi!%20I%20would%20like%20Christmas%20card%20design%20%231%20(Snowman%20and%20robin).%0ANumber%20of%20cards%3A%20%0ADestination%20country%3A%20" target="_blank" rel="noopener">I&rsquo;d like this one</a>
+        </div>
+      </div>
+      <div class="xmas-card">
+        <img src="images/navidad/tarjeta-2.jpg" alt="Christmas card: Santa in a red sleigh pulled by a reindeer through a snowy forest" loading="lazy">
+        <div class="cover-body">
+          <div class="cover-title">Design 2</div>
+          <div class="cover-meta">Santa&rsquo;s sleigh</div>
+          <a class="cover-btn" href="https://wa.me/51949494261?text=Hi!%20I%20would%20like%20Christmas%20card%20design%20%232%20(Santa's%20sleigh).%0ANumber%20of%20cards%3A%20%0ADestination%20country%3A%20" target="_blank" rel="noopener">I&rsquo;d like this one</a>
+        </div>
+      </div>
+      <div class="xmas-card">
+        <img src="images/navidad/tarjeta-3.jpg" alt="Christmas card: decorated fir tree with a deer, foxes, an owl and a squirrel" loading="lazy">
+        <div class="cover-body">
+          <div class="cover-title">Design 3</div>
+          <div class="cover-meta">Woodland tree</div>
+          <a class="cover-btn" href="https://wa.me/51949494261?text=Hi!%20I%20would%20like%20Christmas%20card%20design%20%233%20(Woodland%20tree).%0ANumber%20of%20cards%3A%20%0ADestination%20country%3A%20" target="_blank" rel="noopener">I&rsquo;d like this one</a>
+        </div>
+      </div>
+      <div class="xmas-card">
+        <img src="images/navidad/tarjeta-4.jpg" alt="Christmas card: angel with a holly wreath on a starry blue night" loading="lazy">
+        <div class="cover-body">
+          <div class="cover-title">Design 4</div>
+          <div class="cover-meta">Angel with wreath</div>
+          <a class="cover-btn" href="https://wa.me/51949494261?text=Hi!%20I%20would%20like%20Christmas%20card%20design%20%234%20(Angel%20with%20wreath).%0ANumber%20of%20cards%3A%20%0ADestination%20country%3A%20" target="_blank" rel="noopener">I&rsquo;d like this one</a>
+        </div>
+      </div>
+      <div class="xmas-card">
+        <img src="images/navidad/tarjeta-5.jpg" alt="Christmas card: classic painting of the Nativity with shepherds" loading="lazy">
+        <div class="cover-body">
+          <div class="cover-title">Design 5</div>
+          <div class="cover-meta">Nativity</div>
+          <a class="cover-btn" href="https://wa.me/51949494261?text=Hi!%20I%20would%20like%20Christmas%20card%20design%20%235%20(Nativity).%0ANumber%20of%20cards%3A%20%0ADestination%20country%3A%20" target="_blank" rel="noopener">I&rsquo;d like this one</a>
+        </div>
+      </div>
+      <div class="xmas-card">
+        <img src="images/navidad/tarjeta-6.jpg" alt="Christmas card: the Three Kings walking toward the star" loading="lazy">
+        <div class="cover-body">
+          <div class="cover-title">Design 6</div>
+          <div class="cover-meta">Three Kings</div>
+          <a class="cover-btn" href="https://wa.me/51949494261?text=Hi!%20I%20would%20like%20Christmas%20card%20design%20%236%20(Three%20Kings).%0ANumber%20of%20cards%3A%20%0ADestination%20country%3A%20" target="_blank" rel="noopener">I&rsquo;d like this one</a>
+        </div>
+      </div>
+    </div>
+    <div class="steps-grid">
+      <div class="step-box"><b>1</b><span>Tell me how many cards, which design, your message and each address, by WhatsApp or email.</span></div>
+      <div class="step-box"><b>2</b><span>I send you a PayPal request to confirm your order.</span></div>
+      <div class="step-box"><b>3</b><span>I handwrite, stamp, postmark and mail each card from Peru.</span></div>
+    </div>
+    <p class="covers-cta"><a href="https://wa.me/51949494261?text=Hi!%20I%20would%20like%20to%20send%20Christmas%20cards%20from%20Peru.%0ANumber%20of%20cards%3A%20%0ADestination%20country%3A%20" target="_blank" rel="noopener">&#x1F4AC; Order Christmas cards</a> &nbsp;&middot;&nbsp; <a href="mailto:perucollector@gmail.com?subject=Christmas%20cards%20from%20Peru">&#x2709;&#xFE0F; Email me</a><br>Sending to several people, or for a company? Tell me how many.</p>
+    <p class="xmas-note">Order by November 15 for delivery before Christmas. Delivery times depend on the destination and the postal service, so earlier is safer. Limited number of cards, each one written by hand.</p>
+  </div>
+</section>
+
+<section class="section gray" id="archive">
+  <div class="sec-inner reveal">
+    <div class="sec-eyebrow">The Vault</div>
+    <h2 class="sec-title">Curated scans and data, by access</h2>
+    <p class="sec-lead">First day covers and other Peruvian philatelic material, scanned and catalogued piece by piece. The index is open to look at. Full-resolution scans and complete data sheets are for members and agents.</p>
+    <div class="steps-grid">
+      <div class="step-box"><b style="font-size:1.15rem">Browse</b><span>Search the public index and see what exists.</span></div>
+      <div class="step-box"><b style="font-size:1.15rem">Member access</b><span>Full-resolution scans and the complete data sheet for every piece.</span></div>
+      <div class="step-box"><b style="font-size:1.15rem">Agent access</b><span>An API key lets your software or AI agent query the full dataset.</span></div>
+    </div>
+    <div class="covers-grid" id="archiveGrid"><div class="arch-empty">Loading index&hellip;</div></div>
+    <p class="covers-cta"><a href="https://wa.me/51949494261?text=Hi!%20I%20would%20like%20access%20to%20the%20Vault.%20I%20am%20a%3A%20collector%20%2F%20researcher%20%2F%20developer." target="_blank" rel="noopener">&#x1F4AC; Request access</a> &nbsp;&middot;&nbsp; <a href="mailto:perucollector@gmail.com?subject=Vault%20access%20request">&#x2709;&#xFE0F; Email me</a></p>
+    <div class="api-box">
+      <b>For developers and AI agents</b><br>
+      Public preview index: <code>GET https://www.perucollector.com/data/archive.json</code><br>
+      Full dataset and scans: API key on request. Machine-readable summary at <code>/llms.txt</code>.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="valuations">
+  <div class="sec-inner reveal">
+    <div class="sec-eyebrow">The Appraisal Desk</div>
+    <h2 class="sec-title">Stamp &amp; philatelic valuations</h2>
+    <p class="sec-lead">Stamps, covers, postal history, first day covers, collections and lots. Find out what your philatelic items are worth from a collector who buys and sells them every day.</p>
+    <div class="steps-grid">
+      <div class="step-box"><b>1</b><span>Send clear scans or photos: stamps front and back, covers complete. Add any details you know (year, issue, where it came from).</span></div>
+      <div class="step-box"><b>2</b><span>I identify the items and review condition, rarity and current market demand.</span></div>
+      <div class="step-box"><b>3</b><span>You receive a written valuation, and advice on where and how to sell if you wish.</span></div>
+    </div>
+    <p class="covers-cta"><a href="https://wa.me/51949494261?text=Hi!%20I%20would%20like%20a%20valuation%20of%20my%20stamps%20%2F%20philatelic%20items.%20Here%20is%20what%20I%20have%3A" target="_blank" rel="noopener">&#x1F4AC; Ask for a valuation</a> &nbsp;&middot;&nbsp; <a href="mailto:perucollector@gmail.com?subject=Philatelic%20valuation%20request">&#x2709;&#xFE0F; Email me</a><br>Write to me and I will confirm the terms before you send anything.</p>
+  </div>
+</section>
+
+<section class="section gray" id="vintage">
+  <div class="sec-inner reveal">
+    <div class="sec-eyebrow">The Gallery</div>
+    <h2 class="sec-title">Restored vintage advertising</h2>
+    <p class="sec-lead">Old Peruvian advertisements, carefully cleaned and restored, ready for framing, design projects, publications or your collection.</p>
+    <div class="covers-grid">
+      <div class="cover-card">
+        <div class="cover-img"><!-- replace emoji with: <img src="ads/ad1.jpg" alt="Restored vintage advertisement 1" loading="lazy"> -->&#x1F5BC;&#xFE0F;</div>
+        <div class="cover-body">
+          <div class="cover-title">Restored ad #1</div>
+          <div class="cover-meta">Vintage Peruvian advertising, digitally restored</div>
+          <a class="cover-btn" href="https://wa.me/51949494261?text=Hi!%20I%20am%20interested%20in%20restored%20vintage%20ad%20%231.%20Could%20you%20send%20me%20details%3F" target="_blank" rel="noopener">Request this image</a>
+        </div>
+      </div>
+      <div class="cover-card">
+        <div class="cover-img"><!-- replace emoji with: <img src="ads/ad2.jpg" alt="Restored vintage advertisement 2" loading="lazy"> -->&#x1F5BC;&#xFE0F;</div>
+        <div class="cover-body">
+          <div class="cover-title">Restored ad #2</div>
+          <div class="cover-meta">Vintage Peruvian advertising, digitally restored</div>
+          <a class="cover-btn" href="https://wa.me/51949494261?text=Hi!%20I%20am%20interested%20in%20restored%20vintage%20ad%20%232.%20Could%20you%20send%20me%20details%3F" target="_blank" rel="noopener">Request this image</a>
+        </div>
+      </div>
+      <div class="cover-card">
+        <div class="cover-img"><!-- replace emoji with: <img src="ads/ad3.jpg" alt="Restored vintage advertisement 3" loading="lazy"> -->&#x1F5BC;&#xFE0F;</div>
+        <div class="cover-body">
+          <div class="cover-title">Restored ad #3</div>
+          <div class="cover-meta">Vintage Peruvian advertising, digitally restored</div>
+          <a class="cover-btn" href="https://wa.me/51949494261?text=Hi!%20I%20am%20interested%20in%20restored%20vintage%20ad%20%233.%20Could%20you%20send%20me%20details%3F" target="_blank" rel="noopener">Request this image</a>
+        </div>
+      </div>
+    </div>
+    <p class="covers-cta">Looking for a particular era or product? <a href="https://wa.me/51949494261?text=Hi!%20I%20am%20looking%20for%20restored%20vintage%20ads%20about%3A" target="_blank" rel="noopener">Tell me on WhatsApp</a>.</p>
+  </div>
+</section>
+
+<section class="section" id="covers">
+  <div class="sec-inner reveal">
+    <div class="sec-eyebrow">The Showcase</div>
+    <h2 class="sec-title">Peru covers with recent stamps</h2>
+    <p style="text-align:center;max-width:560px;margin:0 auto;font-size:.92rem;line-height:1.85;color:#555">
+      Real covers, mailed through the Peruvian postal service and carrying recent stamp issues &mdash; hard to find outside Peru. Look at the photos calmly and choose only what you like. No obligation.
+    </p>
+    <div class="covers-grid">
+      <div class="cover-card">
+        <div class="cover-img"><!-- replace the emoji with: <img src="covers/cover1.jpg" alt="Peru cover 1" loading="lazy"> -->&#x2709;&#xFE0F;</div>
+        <div class="cover-body">
+          <div class="cover-title">Cover #1</div>
+          <div class="cover-meta">Recent Peruvian stamps &middot; genuinely mailed in Peru</div>
+          <a class="cover-btn" href="https://wa.me/51949494261?text=Hi! I am interested in Peru cover %231 (recent stamps). Could you send me photos and the price?" target="_blank" rel="noopener">I&rsquo;m interested</a>
+        </div>
+      </div>
+      <div class="cover-card">
+        <div class="cover-img"><!-- replace the emoji with: <img src="covers/cover2.jpg" alt="Peru cover 2" loading="lazy"> -->&#x2709;&#xFE0F;</div>
+        <div class="cover-body">
+          <div class="cover-title">Cover #2</div>
+          <div class="cover-meta">Recent Peruvian stamps &middot; genuinely mailed in Peru</div>
+          <a class="cover-btn" href="https://wa.me/51949494261?text=Hi! I am interested in Peru cover %232 (recent stamps). Could you send me photos and the price?" target="_blank" rel="noopener">I&rsquo;m interested</a>
+        </div>
+      </div>
+      <div class="cover-card">
+        <div class="cover-img"><!-- replace the emoji with: <img src="covers/cover3.jpg" alt="Peru cover 3" loading="lazy"> -->&#x2709;&#xFE0F;</div>
+        <div class="cover-body">
+          <div class="cover-title">Cover #3</div>
+          <div class="cover-meta">Recent Peruvian stamps &middot; genuinely mailed in Peru</div>
+          <a class="cover-btn" href="https://wa.me/51949494261?text=Hi! I am interested in Peru cover %233 (recent stamps). Could you send me photos and the price?" target="_blank" rel="noopener">I&rsquo;m interested</a>
+        </div>
+      </div>
+    </div>
+    <p class="covers-cta">
+      Want to see more? Tell me what you collect and I will send you photos of matching covers.<br>
+      <a href="https://wa.me/51949494261?text=Hi!%20I%20collect%20Peru%20covers.%20Please%20send%20me%20photos." target="_blank" rel="noopener">&#x1F4AC; Ask on WhatsApp</a> &nbsp;&middot;&nbsp;
+      <a href="mailto:perucollector@gmail.com?subject=Peru%20covers%20-%20please%20send%20photos">&#x2709;&#xFE0F; Email me</a><br>
+      Payment is simple: PayPal request or another way that is comfortable for you.
+    </p>
+  </div>
+</section>
+
 <section class="hero">
   <div class="hero-inner">
     <div>
-      <div class="eyebrow">Trujillo, Per&uacute; &mdash; Since 2026</div>
+      <div class="eyebrow">Per&uacute; &mdash; Since 2026</div>
       <h1 class="hero-title">Real postcards<br>from <em>Peru</em><br>to the world</h1>
       <div class="hero-script">Written &middot; Stamped &middot; Postmarked</div>
-      <p class="hero-desc">A real human in Trujillo, northern Peru handwrites your message, stamps it with authentic Peruvian postal stamps, and mails it anywhere in the world.</p>
+      <p class="hero-desc">A real human in Peru handwrites your message, stamps it with authentic Peruvian postal stamps, and mails it anywhere in the world.</p>
       <div class="features">
         <div class="feature"><div class="feat-dot"></div>Handwritten message in your own words</div>
-        <div class="feature"><div class="feat-dot"></div>Official Peruvian stamps &amp; Trujillo postmark</div>
+        <div class="feature"><div class="feat-dot"></div>Official Peruvian stamps &amp; postmark</div>
         <div class="feature"><div class="feat-dot"></div>Real-time photo proof from the post office</div>
         <div class="feature"><div class="feat-dot"></div>Mailed to any country worldwide</div>
         <div class="feature"><div class="feat-dot"></div>Dispatched within 48 hours</div>
@@ -362,16 +584,6 @@ footer{background:var(--ink);color:rgba(255,255,255,.6);padding:44px 24px;text-a
   </div>
 </section>
 
-<div class="proof-banner">
-  <div class="proof-item">&#x1F4F8; Real-time photo proof from the post office</div>
-  <div class="proof-div"></div>
-  <div class="proof-item">&#x1F4EE; Official Peruvian postmark</div>
-  <div class="proof-div"></div>
-  <div class="proof-item">&#x2708;&#xFE0F; Worldwide delivery &middot; 2&ndash;4 weeks</div>
-  <div class="proof-div"></div>
-  <div class="proof-item">&#x1F91D; 100% handmade service</div>
-</div>
-
 <section class="section gray" id="how">
   <div class="sec-inner reveal">
     <div class="sec-eyebrow">The process</div>
@@ -379,7 +591,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.6);padding:44px 24px;text-a
     <div class="steps">
       <div class="step"><div class="step-num">01</div><div class="step-icon">&#x1F4DD;</div><div class="step-title">You order</div><div class="step-desc">Fill out the order form, write your message and choose a postcard style. Then pay via PayPal.</div></div>
       <div class="step"><div class="step-num">02</div><div class="step-icon">&#x270D;&#xFE0F;</div><div class="step-title">I write it</div><div class="step-desc">I personally handwrite your message on a real Peruvian postcard within 48 hours of your order.</div></div>
-      <div class="step"><div class="step-num">03</div><div class="step-icon">&#x1F4F8;</div><div class="step-title">Photo proof</div><div class="step-desc">I send you real-time photos of your postcard being stamped and dropped off at the Trujillo post office.</div></div>
+      <div class="step"><div class="step-num">03</div><div class="step-icon">&#x1F4F8;</div><div class="step-title">Photo proof</div><div class="step-desc">I send you real-time photos of your postcard being stamped and dropped off at the post office.</div></div>
       <div class="step"><div class="step-num">04</div><div class="step-icon">&#x2709;&#xFE0F;</div><div class="step-title">It arrives</div><div class="step-desc">A genuine piece of Peru lands in someone's hands anywhere in the world. Estimated: 2&ndash;4 weeks.</div></div>
     </div>
   </div>
@@ -388,7 +600,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.6);padding:44px 24px;text-a
 <section class="section">
   <div class="sec-inner reveal">
     <div class="sec-eyebrow">The postcards</div>
-    <h2 class="sec-title">From Trujillo &amp; beyond</h2>
+    <h2 class="sec-title">From Peru &amp; beyond</h2>
     <div class="cards-grid">
       <div class="card-thumb"><div class="card-thumb-img">&#x1F3DB;&#xFE0F;</div><div class="card-thumb-label">Trujillo Plaza</div></div>
       <div class="card-thumb"><div class="card-thumb-img">&#x1F3FA;</div><div class="card-thumb-label">Chan Chan</div></div>
@@ -408,7 +620,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.6);padding:44px 24px;text-a
     <div class="order-card">
       <div class="order-header">
         <div class="order-header-title">Order your postcard</div>
-        <div class="order-header-sub">From Trujillo, Per&uacute; &mdash; to anywhere in the world</div>
+        <div class="order-header-sub">From Per&uacute; &mdash; to anywhere in the world</div>
       </div>
       <div class="order-tabs">
         <button class="order-tab active" onclick="showTab('form')">&#x1F4DD; Order Form</button>
@@ -557,6 +769,16 @@ footer{background:var(--ink);color:rgba(255,255,255,.6);padding:44px 24px;text-a
   </div>
 </section>
 
+<div class="proof-banner">
+  <div class="proof-item">&#x1F4F8; Real-time photo proof from the post office</div>
+  <div class="proof-div"></div>
+  <div class="proof-item">&#x1F4EE; Official Peruvian postmark</div>
+  <div class="proof-div"></div>
+  <div class="proof-item">&#x2708;&#xFE0F; Worldwide delivery &middot; 2&ndash;4 weeks</div>
+  <div class="proof-div"></div>
+  <div class="proof-item">&#x1F91D; 100% handmade service</div>
+</div>
+
 <section class="wa-section">
   <h2 class="wa-sec-title">Need something special?</h2>
   <p class="wa-sec-sub">Custom designs, bulk orders, anniversary surprises or a specific postcard? Contact me directly.</p>
@@ -570,139 +792,12 @@ footer{background:var(--ink);color:rgba(255,255,255,.6);padding:44px 24px;text-a
 </section>
 
 
-<!-- PENPAL SERVICE SECTION -->
-<section class="penpal-section" id="penpal">
-  <div class="penpal-inner">
-
-    <div class="penpal-hero reveal">
-      <div class="penpal-tag">Penpal Service &middot; Servicio Penpal</div>
-      <h2 class="penpal-title">Connect with the world<br>through <em>handwritten letters</em></h2>
-      <p class="penpal-sub">
-        We match you with a penpal anywhere in the world. Exchange real handwritten letters, learn about different cultures and build a genuine connection — the old-fashioned way.
-        <br><small style="opacity:.7">Te conectamos con un penpal en cualquier parte del mundo. Intercambia cartas reales escritas a mano y construye una amistad genuina.</small>
-      </p>
-      <div class="penpal-cta-group">
-        <a class="btn-red" href="#penpal-form">&#x2709;&#xFE0F; Find my Penpal &middot; Encontrar Penpal</a>
-        <a class="btn-outline" href="#how-penpal">How it works</a>
-      </div>
-    </div>
-
-    <div class="penpal-steps reveal" id="how-penpal">
-      <div class="penpal-step">
-        <div class="penpal-step-num">01</div>
-        <div class="penpal-step-icon">&#x270D;&#xFE0F;</div>
-        <div class="penpal-step-title">Sign up &middot; Registrate</div>
-        <div class="penpal-step-desc">Fill out your profile — interests, language, age range and the type of penpal you are looking for.</div>
-      </div>
-      <div class="penpal-step">
-        <div class="penpal-step-num">02</div>
-        <div class="penpal-step-icon">&#x1F50D;</div>
-        <div class="penpal-step-title">We match you &middot; Te emparejamos</div>
-        <div class="penpal-step-desc">We review your profile and find the best match based on interests, language and location. Within 48 hours.</div>
-      </div>
-      <div class="penpal-step">
-        <div class="penpal-step-num">03</div>
-        <div class="penpal-step-icon">&#x1F4EC;</div>
-        <div class="penpal-step-title">Start writing &middot; Empieza a escribir</div>
-        <div class="penpal-step-desc">We share your contact details with your match. You write the first letter. The adventure begins.</div>
-      </div>
-      <div class="penpal-step">
-        <div class="penpal-step-num">04</div>
-        <div class="penpal-step-icon">&#x1F30D;</div>
-        <div class="penpal-step-title">Real connection &middot; Conexion real</div>
-        <div class="penpal-step-desc">Exchange letters, stickers, stamps and small surprises. A friendship that grows one envelope at a time.</div>
-      </div>
-    </div>
-
-    <div class="penpal-includes reveal">
-      <div>
-        <div class="penpal-inc-title">What is included</div>
-        <div class="penpal-inc-sub">Everything you need to start your penpal journey &mdash; completely free.</div>
-        <div class="penpal-inc-list">
-          <div class="penpal-inc-item"><div class="penpal-inc-dot"></div>Personal match based on your interests</div>
-          <div class="penpal-inc-item"><div class="penpal-inc-dot"></div>Worldwide matching &mdash; 190+ countries</div>
-          <div class="penpal-inc-item"><div class="penpal-inc-dot"></div>Spanish and English support</div>
-          <div class="penpal-inc-item"><div class="penpal-inc-dot"></div>Tips for writing your first letter</div>
-          <div class="penpal-inc-item"><div class="penpal-inc-dot"></div>Safe and verified profiles</div>
-          <div class="penpal-inc-item"><div class="penpal-inc-dot"></div>100% free &mdash; 100% gratuito</div>
-        </div>
-      </div>
-      <div style="text-align:center">
-        <div style="font-size:5rem;margin-bottom:12px">&#x2709;&#xFE0F;</div>
-        <div style="font-family:'Playfair Display',serif;font-size:1.1rem;color:rgba(255,255,255,.9);line-height:1.6">
-          "A letter always feels<br>more personal than<br>any message app."
-        </div>
-        <div style="font-size:.7rem;color:rgba(255,255,255,.5);margin-top:8px;letter-spacing:2px">PERUCOLLECTOR &middot; TRUJILLO</div>
-      </div>
-    </div>
-
-    <div class="penpal-form-box reveal" id="penpal-form">
-      <div id="pf-form">
-        <div class="penpal-form-title">&#x1F30D; Find your Penpal &middot; Encuentra tu Penpal</div>
-        <div class="penpal-form-sub">Free service &middot; Worldwide &middot; Servicio gratuito &middot; Todo el mundo</div>
-        <form name="penpal-request" netlify hidden>
-          <input type="text" name="name">
-          <input type="email" name="email">
-          <input type="text" name="country">
-          <input type="text" name="age">
-          <input type="text" name="languages">
-          <input type="text" name="interests">
-          <textarea name="about"></textarea>
-        </form>
-        <div class="pf-grid">
-          <div class="pf-group">
-            <div class="pf-label">Full name &middot; Nombre completo *</div>
-            <input class="pf-input" type="text" id="pf-name" placeholder="Your name">
-          </div>
-          <div class="pf-group">
-            <div class="pf-label">Email *</div>
-            <input class="pf-input" type="email" id="pf-email" placeholder="your@email.com">
-          </div>
-          <div class="pf-group">
-            <div class="pf-label">Country &middot; Pais *</div>
-            <input class="pf-input" type="text" id="pf-country" placeholder="Peru, Spain, USA...">
-          </div>
-          <div class="pf-group">
-            <div class="pf-label">Age &middot; Edad *</div>
-            <input class="pf-input" type="number" id="pf-age" placeholder="18" min="13" max="99">
-          </div>
-          <div class="pf-group full">
-            <div class="pf-label">Languages &middot; Idiomas *</div>
-            <input class="pf-input" type="text" id="pf-lang" placeholder="Spanish, English, French...">
-          </div>
-          <div class="pf-group full">
-            <div class="pf-label">Interests &middot; Intereses *</div>
-            <input class="pf-input" type="text" id="pf-int" placeholder="Music, travel, stamps, books, cooking...">
-          </div>
-          <div class="pf-group full">
-            <div class="pf-label">About you &middot; Sobre ti</div>
-            <textarea class="pf-textarea" id="pf-about" placeholder="Tell your future penpal a little about yourself... Cuentale algo sobre ti a tu futuro penpal..."></textarea>
-          </div>
-        </div>
-        <button class="pf-btn" onclick="submitPenpal()">&#x2709;&#xFE0F; Request my Penpal Match &middot; Solicitar mi Penpal</button>
-        <div class="pf-note">
-          We will contact you within 48 hours with your match &middot; Te contactaremos en 48 horas con tu emparejamiento<br>
-          Questions? <a href="mailto:perucollector@gmail.com" style="color:var(--red)">perucollector@gmail.com</a>
-        </div>
-      </div>
-      <div class="pf-success" id="pf-success">
-        <div class="pf-success-icon">&#x2709;&#xFE0F;</div>
-        <div class="pf-success-title">Request received!</div>
-        <div class="pf-success-sub">
-          Thank you! We will find your perfect penpal match within 48 hours and contact you at the email provided.<br><br>
-          <em>Solicitud recibida. Te contactaremos en 48 horas con tu penpal ideal.</em>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
 
 <footer>
   <div class="footer-logo">Postcards from Peru</div>
-  <div class="footer-sub">Written &middot; Stamped &middot; Postmarked &middot; Mailed from Trujillo</div>
+  <div class="footer-sub">Written &middot; Stamped &middot; Postmarked &middot; Mailed from Peru</div>
   <div class="footer-flags">&#x1F1F5;&#x1F1EA; &#x2708;&#xFE0F; &#x1F30D;</div>
-  <div class="footer-copy">&copy; 2026 &middot; Trujillo, La Libertad, Per&uacute; &middot; <a href="mailto:perucollector@gmail.com">perucollector@gmail.com</a></div>
+  <div class="footer-copy">&copy; 2026 &middot; Per&uacute; &middot; <a href="mailto:perucollector@gmail.com">perucollector@gmail.com</a></div>
 </footer>
 
 <script>
@@ -789,226 +884,26 @@ var obs = new IntersectionObserver(function(entries) {
 var els = document.querySelectorAll('.reveal');
 for (var i = 0; i < els.length; i++) obs.observe(els[i]);
 </script>
-<style>
-#cb{position:fixed;bottom:20px;right:20px;z-index:9999;display:flex;flex-direction:column;align-items:center;border:none;background:none;cursor:pointer;filter:drop-shadow(0 6px 18px rgba(122,64,64,0.35))}
-#cb svg{width:90px;height:90px;animation:cf 3.5s ease-in-out infinite}
-@keyframes cf{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-10px) rotate(1deg)}}
-#cb-name{background:#7a4040;color:#fef5f5;font-family:Lato,sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:3px 13px;border-radius:10px;margin-top:5px}
-#cw{position:fixed;bottom:130px;right:20px;z-index:9997;width:320px;background:#fef5f5;border-radius:18px;overflow:hidden;box-shadow:0 10px 48px rgba(122,64,64,0.2);flex-direction:column;border:1px solid #e8c5c0;display:none}
-#cw.open{display:flex}
-#ch{background:linear-gradient(135deg,#1a0a0a,#7a4040);padding:12px 14px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
-#ch-l{display:flex;align-items:center;gap:9px}
-#ch-av{width:36px;height:36px;background:rgba(254,245,245,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px}
-#ch-name{font-size:13px;font-weight:700;color:#fef5f5;font-family:Lato,sans-serif}
-#ch-sub{font-size:10px;color:rgba(254,245,245,0.6);font-family:Lato,sans-serif}
-#ch-r{display:flex;gap:5px;align-items:center}
-.lg{background:rgba(254,245,245,0.12);border:1px solid rgba(254,245,245,0.2);border-radius:5px;padding:3px 7px;font-size:10px;font-weight:700;color:rgba(254,245,245,0.7);cursor:pointer;font-family:Lato,sans-serif}
-.lg.on{background:rgba(254,245,245,0.28);color:#fef5f5}
-#cx{background:rgba(254,245,245,0.1);border:none;border-radius:50%;width:26px;height:26px;color:rgba(254,245,245,0.8);font-size:14px;cursor:pointer}
-#cm{flex:1;overflow-y:auto;padding:13px 11px;display:flex;flex-direction:column;gap:9px;background:#fdf0f0;min-height:180px}
-.pm{display:flex;gap:6px;align-items:flex-end}
-.pm.u{flex-direction:row-reverse}
-.pa{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;background:#e8c5c0}
-.pm.u .pa{background:#c0392b}
-.pt{max-width:80%;padding:8px 11px;border-radius:11px;font-size:12px;line-height:1.6;font-family:Lato,sans-serif}
-.pm.b .pt{background:#fff;border:1px solid #e8c5c0;border-bottom-left-radius:3px;color:#1a0a0a}
-.pm.u .pt{background:#c0392b;color:#fff;border-bottom-right-radius:3px}
-.pt-dots{display:flex;gap:3px;padding:4px 0}
-.pt-dots span{width:5px;height:5px;background:#e8c5c0;border-radius:50%;animation:db 1.2s infinite}
-.pt-dots span:nth-child(2){animation-delay:0.2s}
-.pt-dots span:nth-child(3){animation-delay:0.4s}
-@keyframes db{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}
-#cq{padding:7px 11px;background:#fff;border-top:1px solid #e8c5c0;display:flex;gap:5px;flex-wrap:wrap;flex-shrink:0}
-.qb{background:#fef5f5;border:1px solid #e8c5c0;border-radius:13px;padding:4px 9px;font-size:10px;font-weight:600;color:#7a4040;cursor:pointer;font-family:Lato,sans-serif;white-space:nowrap}
-.qb:hover{background:#c0392b;color:#fff;border-color:#c0392b}
-#ci{display:flex;gap:6px;padding:9px 11px;background:#fff;border-top:1px solid #e8c5c0;flex-shrink:0}
-#ci input{flex:1;background:#fef5f5;border:1px solid #e8c5c0;border-radius:18px;padding:8px 13px;font-size:12px;color:#1a0a0a;font-family:Lato,sans-serif;outline:none}
-#ci input:focus{border-color:#7a4040}
-#ci button{background:#c0392b;border:none;border-radius:50%;width:32px;height:32px;cursor:pointer;color:#fff;font-size:12px;flex-shrink:0}
-</style>
-
-<button id="cb" onclick="CT.toggle()">
-<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-<ellipse cx="50" cy="98" rx="28" ry="4" fill="rgba(122,64,64,0.15)"/>
-<rect x="8" y="28" width="84" height="56" rx="7" fill="#fef5f5" stroke="#e8c5c0" stroke-width="1.5"/>
-<path d="M8 28 L50 56 L92 28 L92 33 L50 61 L8 33 Z" fill="#c0392b"/>
-<path d="M8 84 L44 60" stroke="#e8c5c0" stroke-width="1" fill="none"/>
-<path d="M92 84 L56 60" stroke="#e8c5c0" stroke-width="1" fill="none"/>
-<circle cx="38" cy="70" r="5.5" fill="#fff" stroke="#e8c5c0" stroke-width="0.8"/>
-<circle cx="62" cy="70" r="5.5" fill="#fff" stroke="#e8c5c0" stroke-width="0.8"/>
-<circle cx="39.5" cy="69" r="2.8" fill="#1a0a0a"/>
-<circle cx="63.5" cy="69" r="2.8" fill="#1a0a0a"/>
-<circle cx="41" cy="67.5" r="1" fill="#fff"/>
-<circle cx="65" cy="67.5" r="1" fill="#fff"/>
-<circle cx="29" cy="74" r="5" fill="#e8c5c0" opacity="0.6"/>
-<circle cx="71" cy="74" r="5" fill="#e8c5c0" opacity="0.6"/>
-<path d="M40 78 Q50 85 60 78" stroke="#7a4040" stroke-width="2" fill="none" stroke-linecap="round"/>
-<rect x="68" y="31" width="16" height="14" rx="2" fill="#fff" stroke="#e8c5c0" stroke-width="1"/>
-<rect x="70" y="33" width="12" height="10" rx="1" fill="#fde8e8"/>
-<text x="76" y="41" font-size="6.5" text-anchor="middle" fill="#c0392b" font-family="serif" font-weight="bold">PE</text>
-<path d="M8 56 Q-3 52 1 44" stroke="#e8c5c0" stroke-width="5" fill="none" stroke-linecap="round"/>
-<circle cx="1" cy="43" r="4" fill="#fef5f5" stroke="#e8c5c0" stroke-width="1.2"/>
-<path d="M92 56 Q103 52 99 44" stroke="#e8c5c0" stroke-width="5" fill="none" stroke-linecap="round"/>
-<circle cx="99" cy="43" r="4" fill="#fef5f5" stroke="#e8c5c0" stroke-width="1.2"/>
-<path d="M40 84 Q37 94 32 96" stroke="#e8c5c0" stroke-width="4.5" fill="none" stroke-linecap="round"/>
-<path d="M60 84 Q63 94 68 96" stroke="#e8c5c0" stroke-width="4.5" fill="none" stroke-linecap="round"/>
-<ellipse cx="30" cy="96" rx="7" ry="3.5" fill="#fef5f5" stroke="#e8c5c0" stroke-width="1"/>
-<ellipse cx="70" cy="96" rx="7" ry="3.5" fill="#fef5f5" stroke="#e8c5c0" stroke-width="1"/>
-</svg>
-<div id="cb-name">Cartita</div>
-</button>
-
-<div id="cw">
-<div id="ch">
-<div id="ch-l">
-<div id="ch-av">envelope</div>
-<div><div id="ch-name">Cartita</div><div id="ch-sub">Tu asistente postal</div></div>
-</div>
-<div id="ch-r">
-<button class="lg on" onclick="CT.lang('es',this)">ES</button>
-<button class="lg" onclick="CT.lang('en',this)">EN</button>
-<button id="cx" onclick="CT.toggle()">x</button>
-</div>
-</div>
-<div id="cm"></div>
-<div id="cq"></div>
-<div id="ci">
-<input id="ci-inp" placeholder="Preguntale a Cartita...">
-<button onclick="CT.send()">&#10148;</button>
-</div>
-</div>
 
 <script>
-var CT = (function() {
-  var L = "es";
-  var busy = false;
-  var started = false;
-
-  var Q = {
-    es: ["Como enviar carta", "Llenar un sobre", "Primer penpal", "Cuanto cuesta", "Cuanto tarda", "Requisitos Serpost"],
-    en: ["How to send a letter", "Address an envelope", "International letter", "First penpal", "How much", "How long"]
-  };
-
-  var W = {
-    es: "Hola! Soy Cartita tu asistente postal. Te ayudo con cartas, sobres y penpals.",
-    en: "Hi! I am Cartita your postal assistant. I help with letters, envelopes and penpals."
-  };
-
-  var A = {
-    es: {
-      c: "Proceso para enviar una carta en Serpost: 1) Ve con el sobre ABIERTO a la ventanilla. 2) Lleva tu DNI fisico (obligatorio). 3) Tendras que proporcionar datos completos del remitente Y destinatario: nombre, direccion, telefono y email de ambos. 4) El personal revisa el contenido del sobre. 5) Llenan el formulario CN22: declaras que envias y su valor aproximado (obligatorio). 6) Te toman foto y huellas dactilares de ambos indices. 7) Eliges servicio: ORDINARIO sin tracking (mas economico) o CERTIFICADO con numero de seguimiento (mas seguro). 8) El precio depende del peso y destino. El proceso toma bastante tiempo, ve con anticipacion y paciencia.",
-      s: "Como llenar un sobre correctamente: REMITENTE (tu, arriba izquierda): nombre completo, direccion, distrito, departamento, Peru. DESTINATARIO (al centro o abajo derecha): nombre completo, direccion exacta, ciudad, codigo postal, pais. ESTAMPILLA: arriba a la derecha. Para internacional agrega el correo electronico del destinatario. Escribe con letra clara y en mayusculas.",
-      i: "Carta internacional por Serpost: QUE LLEVAR: DNI fisico, sobre abierto, datos completos de remitente Y destinatario (nombre, direccion, telefono y email de ambos). PROCESO: inspeccion del contenido, CN22 obligatorio (declaras contenido y valor), foto y huellas dactilares. SERVICIOS: Ordinario sin tracking o Certificado con seguimiento. PRECIO: segun peso y destino. TIEMPO: promedio 3 semanas, puede extenderse en navidad o destinos alejados. El proceso en ventanilla toma tiempo. Para postales desde Trujillo sin complicaciones: PeruCollector.com por $10 USD.",
-      p: "PeruCollector tiene un servicio GRATUITO de emparejamiento de penpals para todo el mundo. Nosotros te buscamos tu penpal ideal en 48 horas segun tus intereses e idiomas. Solo llena el formulario en la seccion Penpal de nuestra web. Tambien puedes registrarte en PenPalWorld.com o la app Slowly. La primera carta: presentate, cuenta donde vives, tus hobbies, y haz preguntas genuinas.",
-      k: "Tarifas Serpost: el precio depende del PESO y del DESTINO. Hay dos servicios: ORDINARIO (sin numero de seguimiento, mas economico) y CERTIFICADO (con tracking, mas seguro). Para conocer el precio exacto usa el calculador en serpost.com.pe o consulta directamente en ventanilla. Pago en efectivo, tarjeta o billetera digital. Para postales escritas a mano desde Trujillo visita PeruCollector.com por $10 USD con todo incluido.",
-      t: "Tiempos de entrega Serpost: NACIONAL: Expreso 48-72 horas, Estandar 5-7 dias habiles, Economico 7-10 dias habiles. INTERNACIONAL: Expreso 7-10 dias habiles, Estandar 7-10 dias habiles, Economico 10-30 dias habiles. IMPORTANTE: los tiempos no incluyen dias intervenidos por aduana del pais destino ni domingos y feriados. Serpost llega a mas de 190 paises.",
-      d: "Hola! Puedo ayudarte con: enviar cartas nacionales e internacionales desde Peru, requisitos Serpost (DNI, foto, huella), llenar sobres correctamente, formulario CN22, tarifas y tiempos de entrega, como empezar con penpals. Para postales escritas a mano desde Trujillo visita PeruCollector.com. Cual es tu consulta?",
-      r: "Requisitos para enviar en Serpost: 1) DNI fisico original obligatorio. 2) Sobre ABIERTO para inspeccion del contenido. 3) Datos de remitente y destinatario: nombre, direccion, TELEFONO y EMAIL de ambos. 4) Formulario CN22: declaras contenido y valor aproximado (obligatorio). 5) Te toman FOTO y HUELLAS DACTILARES de ambos indices. El proceso toma bastante tiempo, ve con anticipacion y paciencia."
-    },
-    en: {
-      c: "How to send a letter at Serpost Peru: 1) Go to the counter with your envelope OPEN. 2) Bring your national ID (mandatory). 3) You must provide full details for both sender AND recipient: name, address, phone number and email for both. 4) Staff inspects the envelope contents. 5) Fill out the CN22 form: declare what you are sending and its approximate value (mandatory). 6) They take your photo and fingerprints of both index fingers. 7) Choose your service: ORDINARY without tracking (more affordable) or CERTIFIED with tracking number (more secure). 8) Price depends on weight and destination. The whole process takes considerable time so go early and be patient.",
-      s: "How to address an envelope: SENDER (you, top left): full name, street address, district, Lima or city, Peru. RECIPIENT (center or bottom right): full name, exact address, city, postal code, country. STAMP: top right corner. For international add recipient email. Write clearly in capital letters for best results.",
-      i: "International letter via Serpost Peru: BRING: national ID, envelope open, full details for sender AND recipient (name, address, phone and email for both). PROCESS: content inspection, mandatory CN22 form (declare contents and approximate value), photo and fingerprints. SERVICES: Ordinary without tracking or Certified with tracking number. PRICE: by weight and destination. TIME: average 3 weeks, longer during Christmas season or for remote destinations. The counter process takes time so go early. For easy handwritten postcards from Trujillo: PeruCollector.com - $10 USD.",
-      p: "PeruCollector offers a FREE penpal matching service worldwide. We find your ideal penpal within 48 hours based on your interests and languages. Just fill out the form in the Penpal section of our website. We match people from 190+ countries. You can also sign up at PenPalWorld.com or the Slowly app. First letter tip: introduce yourself, share where you live, your hobbies, and ask genuine questions.",
-      k: "Serpost rates: price depends on WEIGHT and DESTINATION. Two services available: ORDINARY (no tracking, more affordable) and CERTIFIED (with tracking number, more secure). For exact pricing use the calculator at serpost.com.pe or ask directly at the counter. Payment by cash, card or digital wallet. For handwritten postcards from Trujillo without the hassle visit PeruCollector.com - $10 USD all included.",
-      t: "Serpost delivery times: DOMESTIC: Express 48-72 hours, Standard 5-7 business days, Economy 7-10 business days. INTERNATIONAL: Express 7-10 business days, Standard 7-10 business days, Economy 10-30 business days. NOTE: times do not include days held by customs in destination country, Sundays or holidays. Serpost reaches 190+ countries.",
-      d: "Hi! I can help with: sending national and international letters from Peru, Serpost requirements (ID, photo, fingerprint), addressing envelopes correctly, CN22 form, rates and delivery times, how to start penpaling. For handwritten postcards from Trujillo visit PeruCollector.com. What is your question?",
-      r: "Serpost requirements: 1) Original national ID mandatory. 2) Envelope OPEN for content inspection. 3) Sender and recipient details: name, address, PHONE and EMAIL for both. 4) CN22 form: declare contents and approximate value (mandatory). 5) They take your PHOTO and FINGERPRINTS of both index fingers. The whole process takes considerable time so go early and be patient."
-    }
-  };
-
-  function reply(txt) {
-    var t = txt.toLowerCase();
-    var a = L === "es" ? A.es : A.en;
-    if (t.indexOf("sobre") >= 0 || t.indexOf("envelope") >= 0 || t.indexOf("direccion") >= 0 || t.indexOf("address") >= 0 || t.indexOf("llenar") >= 0 || t.indexOf("fill") >= 0) return a.s;
-    if (t.indexOf("penpal") >= 0 || t.indexOf("pen pal") >= 0 || t.indexOf("amigo por carta") >= 0 || t.indexOf("corresponsal") >= 0) return a.p;
-    if (t.indexOf("tarda") >= 0 || t.indexOf("long") >= 0 || t.indexOf("tiempo") >= 0 || t.indexOf("semana") >= 0 || t.indexOf("week") >= 0 || t.indexOf("dias") >= 0 || t.indexOf("days") >= 0 || t.indexOf("demora") >= 0) return a.t;
-    if (t.indexOf("cuesta") >= 0 || t.indexOf("precio") >= 0 || t.indexOf("price") >= 0 || t.indexOf("tarifa") >= 0 || t.indexOf("rate") >= 0 || t.indexOf("costo") >= 0 || t.indexOf("cost") >= 0) return a.k;
-    if (t.indexOf("requisito") >= 0 || t.indexOf("requirement") >= 0 || t.indexOf("necesito") >= 0 || t.indexOf("need") >= 0 || t.indexOf("dni") >= 0 || t.indexOf("cn22") >= 0 || t.indexOf("huella") >= 0 || t.indexOf("finger") >= 0) return a.r;
-    if (t.indexOf("carta") >= 0 || t.indexOf("letter") >= 0 || t.indexOf("enviar") >= 0 || t.indexOf("send") >= 0 || t.indexOf("serpost") >= 0 || t.indexOf("correo") >= 0 || t.indexOf("mail") >= 0 || t.indexOf("internacional") >= 0 || t.indexOf("international") >= 0) return a.c;
-    return a.d;
-  }
-
-  function addMsg(role, text) {
-    var el = document.getElementById("cm");
-    var d = document.createElement("div");
-    d.className = "pm " + role;
-    d.innerHTML = "<div class='pa'>" + (role === "b" ? "✉" : "U") + "</div><div class='pt'>" + text + "</div>";
-    el.appendChild(d);
-    el.scrollTop = el.scrollHeight;
-  }
-
-  function showTyping() {
-    var el = document.getElementById("cm");
-    var d = document.createElement("div");
-    d.className = "pm b"; d.id = "pty";
-    d.innerHTML = "<div class='pa'>✉</div><div class='pt'><div class='pt-dots'><span></span><span></span><span></span></div></div>";
-    el.appendChild(d);
-    el.scrollTop = el.scrollHeight;
-  }
-
-  function hideTyping() {
-    var t = document.getElementById("pty");
-    if (t) t.remove();
-  }
-
-  function renderQuick() {
-    var el = document.getElementById("cq");
-    el.innerHTML = "";
-    Q[L].forEach(function(q) {
-      var b = document.createElement("button");
-      b.className = "qb";
-      b.textContent = q;
-      b.onclick = function() { CT.ask(q); };
-      el.appendChild(b);
+(function(){
+  var grid=document.getElementById('archiveGrid'); if(!grid) return;
+  function safe(u){return typeof u==='string' && (/^https:\/\//.test(u) || /^[\w\-\/.]+$/.test(u));}
+  function el(t,c,x){var e=document.createElement(t); if(c)e.className=c; if(x!=null)e.textContent=x; return e;}
+  fetch('/data/archive.json').then(function(r){if(!r.ok)throw new Error('x');return r.json();}).then(function(d){
+    grid.textContent='';
+    var items=(d&&d.items)||[];
+    if(!items.length){grid.appendChild(el('div','arch-empty','The catalog is being prepared. Ask on WhatsApp for current files.'));return;}
+    items.forEach(function(it){
+      var card=el('div','cover-card'), body=el('div','cover-body');
+      body.appendChild(el('div','cover-title',it.title||'Untitled'));
+      body.appendChild(el('div','cover-meta',[it.type,it.year].filter(Boolean).join(' \u00b7 ')));
+      if(it.description) body.appendChild(el('div','cover-meta',it.description));
+      if(safe(it.url)){var a=el('a','cover-btn','Open'); a.href=it.url; a.target='_blank'; a.rel='noopener'; body.appendChild(a);}
+      card.appendChild(body); grid.appendChild(card);
     });
-  }
-
-  return {
-    toggle: function() {
-      var w = document.getElementById("cw");
-      if (w.classList.contains("open")) {
-        w.classList.remove("open");
-      } else {
-        w.classList.add("open");
-        if (!started) {
-          started = true;
-          addMsg("b", W[L]);
-          renderQuick();
-        }
-      }
-    },
-    lang: function(l, btn) {
-      L = l;
-      document.querySelectorAll(".lg").forEach(function(b) { b.classList.remove("on"); });
-      btn.classList.add("on");
-      document.getElementById("ci-inp").placeholder = l === "es" ? "Preguntale a Cartita..." : "Ask Cartita...";
-      renderQuick();
-    },
-    send: function() {
-      var inp = document.getElementById("ci-inp");
-      var txt = inp.value.trim();
-      if (!txt || busy) return;
-      inp.value = "";
-      addMsg("u", txt);
-      busy = true;
-      showTyping();
-      setTimeout(function() {
-        hideTyping();
-        addMsg("b", reply(txt));
-        busy = false;
-      }, 600);
-    },
-    ask: function(q) {
-      document.getElementById("ci-inp").value = q;
-      CT.send();
-    }
-  };
+  }).catch(function(){grid.textContent=''; grid.appendChild(el('div','arch-empty','The catalog could not be loaded right now.'));});
 })();
-
-document.getElementById("ci-inp").addEventListener("keydown", function(e) {
-  if (e.key === "Enter") CT.send();
-});
 </script>
 </body>
 </html>

@@ -1,0 +1,21 @@
+{
+  "name": "PeruCollector Vault: public preview index",
+  "description": "Public index of scanned and catalogued Peruvian philatelic material. Full-resolution scans and complete data sheets are available to members and agents by access request.",
+  "publisher": "PeruCollector",
+  "site": "https://www.perucollector.com",
+  "contact": "perucollector@gmail.com",
+  "access": {
+    "preview_index": "free",
+    "full_dataset_and_scans": "API key on request",
+    "request_access": "https://www.perucollector.com/#archive"
+  },
+  "schema": {
+    "title": "string, required",
+    "type": "string, e.g. first day cover",
+    "year": "string or number",
+    "description": "string, short",
+    "url": "https URL to the public preview of the piece (optional)"
+  },
+  "updated": "2026-10-13",
+  "items": []
+}
