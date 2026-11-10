@@ -223,10 +223,6 @@ footer{background:var(--ink);color:rgba(255,255,255,.6);padding:44px 24px;text-a
 .cover-meta{font-size:.78rem;color:var(--muted);line-height:1.6}
 .cover-btn{margin-top:auto;display:inline-block;text-align:center;padding:10px 14px;background:var(--red);color:#fff;border-radius:6px;font-size:.7rem;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;font-weight:400}
 .cover-btn:hover{background:var(--red-dark)}
-.xmas-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:18px;margin-top:28px;align-items:start}
-.xmas-card{background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden;box-shadow:0 4px 18px var(--shadow);display:flex;flex-direction:column}
-.xmas-card img{width:100%;height:auto;display:block}
-.xmas-card .cover-body{padding:12px 14px 14px}
 .covers-cta{text-align:center;margin-top:26px;font-size:.88rem;line-height:1.8;color:#555}
 .covers-cta a{color:var(--red);font-weight:700;text-decoration:none}
 
@@ -246,12 +242,8 @@ footer{background:var(--ink);color:rgba(255,255,255,.6);padding:44px 24px;text-a
 .house{background:var(--cream);padding:96px 24px 72px;border-bottom:3px solid var(--red)}
 .house + .hero{padding-top:64px}
 .house-in{max-width:1020px;margin:0 auto}
-.house-top{display:grid;grid-template-columns:220px 1fr;gap:40px;align-items:center;margin-bottom:48px}
-@media(max-width:700px){.house-top{grid-template-columns:1fr;justify-items:center;text-align:center}}
-.host-frame{width:200px;padding:10px;border:3px solid var(--red);background:#fff;box-shadow:0 0 0 6px var(--cream),0 0 0 8px var(--red-light)}
-.host-photo{aspect-ratio:3/4;background:var(--red-light);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-style:italic;font-size:3rem;color:var(--red-dark);overflow:hidden}
-.host-photo img{width:100%;height:100%;object-fit:cover}
-.host-plaque{margin-top:18px;text-align:center;font-family:'Playfair Display',serif;font-size:.85rem;color:var(--red)}
+.house-top{margin-bottom:48px}
+@media(max-width:700px){.house-top{text-align:center}}
 .house h2{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5vw,3.8rem);font-weight:700;line-height:1.1;color:var(--ink);margin-bottom:14px}
 .house-say{font-family:'Dancing Script',cursive;font-size:1.55rem;color:var(--red);margin-bottom:10px}
 .house p.lead{font-size:.95rem;line-height:1.85;max-width:520px;color:#555}
@@ -266,14 +258,40 @@ footer{background:var(--ink);color:rgba(255,255,255,.6);padding:44px 24px;text-a
 .room.w3{grid-column:span 3}.room.w2{grid-column:span 2}
 @media(prefers-reduced-motion:reduce){.room{transition:none}}
 
-/* CHRISTMAS CAMPAIGN */
+/* FEATURED ISSUE ROOM */
+.cover-img.fit img{object-fit:contain;background:var(--cream)}
+.opt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin:26px 0}
+.opt-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:20px 22px;box-shadow:0 4px 18px var(--shadow);display:flex;flex-direction:column;align-items:flex-start}
+.opt-card h4{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--ink);margin-bottom:6px}
+.opt-card p{font-size:.9rem;line-height:1.7;color:#555;margin-bottom:14px}
+#pope{padding:92px 24px 52px}
+#pope .sec-title{margin-bottom:12px}
+#pope .sub-title{margin:32px 0 6px}
+.prod-list{display:flex;flex-direction:column;gap:16px;margin-top:20px}
+.prod{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden;box-shadow:0 4px 18px var(--shadow)}
+.prod-img{background:var(--cream);display:flex;gap:6px;padding:8px;align-items:center;justify-content:center}
+.prod-img img{display:block;height:auto;min-width:0}
+.zm{display:block;overflow:hidden;border-radius:3px;cursor:zoom-in}
+.prod-img.one .zm{width:100%}
+.prod-img.two .zm{width:calc(50% - 3px)}
+.zm img{width:100%;transition:transform .12s ease-out}
+@media(hover:hover){.zm:hover img{transform:scale(2)}}
+.prod-body{padding:20px 26px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:8px}
+@media(max-width:700px){.prod{grid-template-columns:1fr}}
+#pope .opt-grid{margin:16px 0 0;gap:14px}
+#pope .opt-card{padding:16px 20px}
+#pope .opt-card p{margin-bottom:10px}
+#pope .steps-grid{gap:10px;margin-top:14px}
+#pope .step-box{padding:12px 16px;display:flex;gap:12px;align-items:center;text-align:left}
+#pope .step-box b{margin:0;font-size:1.3rem}
+#pope .covers-cta{margin-top:16px}
+.sub-title{font-family:'Playfair Display',serif;font-size:1.35rem;text-align:center;color:var(--ink);margin:44px 0 8px}
 .room.w6{grid-column:span 6}
 .room.seasonal{background:var(--red);border-color:var(--red-dark)}
 .room.seasonal .room-sign{background:#fff;color:var(--red)}
 .room.seasonal .room-desc,.room.seasonal .room-enter{color:#fff}
-.xmas-note{max-width:560px;margin:18px auto 0;text-align:center;font-size:.8rem;line-height:1.7;color:#777}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"PeruCollector","url":"https://www.perucollector.com","email":"perucollector@gmail.com"},{"@type":"Dataset","name":"PeruCollector Vault: Peruvian philatelic scans and curated data","description":"Scanned and catalogued Peruvian philatelic material, including first day covers, with structured data sheets. Public preview index; full data and scans by paid access.","url":"https://www.perucollector.com/#archive","creator":{"@type":"Organization","name":"PeruCollector"},"isAccessibleForFree":false},{"@type":"Service","name":"Christmas cards from Peru","description":"Handwritten Christmas cards with Peruvian stamps and postmark, mailed from Peru worldwide.","provider":{"@type":"Organization","name":"PeruCollector"},"offers":{"@type":"Offer","price":"10","priceCurrency":"USD"}},{"@type":"Service","name":"Philatelic valuations","provider":{"@type":"Organization","name":"PeruCollector"},"description":"Written valuations of stamps, covers and other philatelic items."}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"PeruCollector","url":"https://www.perucollector.com","email":"perucollector@gmail.com"},{"@type":"Dataset","name":"PeruCollector Vault: Peruvian philatelic scans and curated data","description":"Scanned and catalogued Peruvian philatelic material, including first day covers, with structured data sheets. Public preview index; full data and scans by paid access.","url":"https://www.perucollector.com/#archive","creator":{"@type":"Organization","name":"PeruCollector"},"isAccessibleForFree":false},{"@type":"Service","name":"Pope Leo XIV visit to Peru: commemorative philatelic pieces","description":"Private sale of the new souvenir sheet and official postcard issued for the 2026 visit of Pope Leo XIV, and mailing from Peru of an envelope franked with the souvenir sheet or the official postcard with two stamps. Prices on request.","provider":{"@type":"Organization","name":"PeruCollector"}},{"@type":"Service","name":"Philatelic valuations","provider":{"@type":"Organization","name":"PeruCollector"},"description":"Written valuations of stamps, covers and other philatelic items."}]}</script>
 </head>
 <body>
 
@@ -291,7 +309,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.6);padding:44px 24px;text-a
 <nav>
   <div class="nav-logo">Postcards from Peru</div>
   <div class="nav-links">
-        <a class="nav-btn" href="#christmas">Christmas</a>
+        <a class="nav-btn" href="#pope">Pope Leo XIV</a>
     <a class="nav-btn" href="#archive">Vault</a>
     <a class="nav-btn" href="#valuations">Valuations</a>
     <a class="nav-btn" href="#vintage">Gallery</a>
@@ -301,13 +319,51 @@ footer{background:var(--ink);color:rgba(255,255,255,.6);padding:44px 24px;text-a
   </div>
 </nav>
 
+<section class="section" id="pope">
+  <div class="sec-inner reveal">
+    <div class="sec-eyebrow">New issue &middot; November 2026</div>
+    <h2 class="sec-title">Pope Leo XIV in Peru</h2>
+    <p class="sec-lead">Peru issued a souvenir sheet of four stamps and an official postcard for the apostolic visit of Pope Leo XIV (11 to 16 November 2026). I offer them in two ways: private sale of the new pieces, or mailed from Peru for you.</p>
+
+    <h3 class="sub-title">Private sale</h3>
+    <p class="sec-lead">New and unused pieces, in private sale. Write to me and I will send you the price and availability.</p>
+    <div class="prod-list">
+      <div class="prod">
+        <div class="prod-img one"><span class="zm"><img src="images/papa/hoja-souvenir.jpg" alt="Souvenir sheet of four stamps for the visit of Pope Leo XIV to Peru" loading="lazy"></span></div>
+        <div class="prod-body">
+          <div class="cover-title">Souvenir sheet</div>
+          <div class="cover-meta">Four commemorative stamps in a single sheet. New and unused.</div>
+          <a class="cover-btn" href="https://wa.me/51949494261?text=Hi%21%20I%20would%20like%20to%20buy%20the%20Pope%20Leo%20XIV%20souvenir%20sheet%20%28new%29.%20Could%20you%20send%20me%20the%20price%20and%20availability%3F" target="_blank" rel="noopener">Ask for the price</a>
+        </div>
+      </div>
+      <div class="prod">
+        <div class="prod-img two"><span class="zm"><img src="images/papa/postal-anverso.jpg" alt="Official postcard of the visit of Pope Leo XIV to Peru, front" loading="lazy"></span><span class="zm"><img src="images/papa/postal-reverso.jpg" alt="Official postcard of the visit of Pope Leo XIV to Peru, back" loading="lazy"></span></div>
+        <div class="prod-body">
+          <div class="cover-title">Official postcard</div>
+          <div class="cover-meta">The official postcard of the visit, shown front and back. New and unused.</div>
+          <a class="cover-btn" href="https://wa.me/51949494261?text=Hi%21%20I%20would%20like%20to%20buy%20the%20official%20Pope%20Leo%20XIV%20postcard%20%28new%29.%20Could%20you%20send%20me%20the%20price%20and%20availability%3F" target="_blank" rel="noopener">Ask for the price</a>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="sub-title">Mail it from Peru</h3>
+    <p class="sec-lead">Choose what you want to send. I add the postage and mail it from Peru to any address in the world.</p>
+    <div class="opt-grid">
+      <div class="opt-card"><h4>Envelope franked with the souvenir sheet</h4><p>Your letter in an envelope franked with stamps from the souvenir sheet.</p><a class="cover-btn" href="https://wa.me/51949494261?text=Hi%21%20I%20would%20like%20to%20send%20an%20envelope%20franked%20with%20the%20Pope%20Leo%20XIV%20souvenir%20sheet%20stamps.%0ADestination%20country%3A%20" target="_blank" rel="noopener">Send an envelope</a></div>
+      <div class="opt-card"><h4>Official postcard with two stamps</h4><p>The official postcard of the visit, with your message, franked with two postage stamps.</p><a class="cover-btn" href="https://wa.me/51949494261?text=Hi%21%20I%20would%20like%20to%20send%20the%20official%20Pope%20Leo%20XIV%20postcard%20franked%20with%20two%20stamps.%0ADestination%20country%3A%20" target="_blank" rel="noopener">Send the postcard</a></div>
+    </div>
+    <div class="steps-grid">
+      <div class="step-box"><b>1</b><span>Tell me the option, your message and the address, by WhatsApp or email.</span></div>
+      <div class="step-box"><b>2</b><span>I confirm the price and send you a PayPal request.</span></div>
+      <div class="step-box"><b>3</b><span>I frank it and mail it from Peru.</span></div>
+    </div>
+    <p class="covers-cta"><a href="mailto:perucollector@gmail.com?subject=Pope%20Leo%20XIV%20issue">&#x2709;&#xFE0F; Email me</a><br>Write to me for prices and availability. Ask also about the first day cover (SPD) of the issue.</p>
+  </div>
+</section>
+
 <section class="house" id="house">
   <div class="house-in">
     <div class="house-top">
-      <div>
-        <div class="host-frame"><div class="host-photo"><!-- replace PC with: <img src="host.jpg" alt="Your host at PeruCollector"> -->PC</div></div>
-        <div class="host-plaque">Your host</div>
-      </div>
       <div>
         <div class="house-say">Welcome in, take your time.</div>
         <h2>A station for collectors</h2>
@@ -315,78 +371,12 @@ footer{background:var(--ink);color:rgba(255,255,255,.6);padding:44px 24px;text-a
       </div>
     </div>
     <div class="plan">
-    <a class="room w6 seasonal" href="#christmas"><span class="room-sign">Christmas from Peru</span><span class="room-desc">Your Christmas card handwritten in Peru, with Peruvian stamps and postmark, mailed to anyone in the world.</span><span class="room-enter">Send a card</span></a>
     <a class="room w3" href="#archive"><span class="room-sign">The Vault</span><span class="room-desc">Scans of Peruvian first day covers and curated collecting data. Browse the index, unlock the full vault.</span><span class="room-enter">Request access</span></a>
     <a class="room w3" href="#valuations"><span class="room-sign">The Appraisal Desk</span><span class="room-desc">Bring your stamps and philatelic items for a written valuation.</span><span class="room-enter">Ask for a valuation</span></a>
     <a class="room w2" href="#vintage"><span class="room-sign">The Gallery</span><span class="room-desc">Vintage Peruvian advertising, carefully restored.</span><span class="room-enter">Walk through</span></a>
     <a class="room w2" href="#covers"><span class="room-sign">The Showcase</span><span class="room-desc">Peru covers with recent stamps, for those who want the real piece.</span><span class="room-enter">See the covers</span></a>
     <a class="room w2" href="#order"><span class="room-sign">The Post Office</span><span class="room-desc">Handwritten postcards, stamped and postmarked in Peru, shipped on request.</span><span class="room-enter">Go to the counter</span></a>
     </div>
-  </div>
-</section>
-
-<section class="section" id="christmas">
-  <div class="sec-inner reveal">
-    <div class="sec-eyebrow">Christmas campaign</div>
-    <h2 class="sec-title">Christmas cards from Peru</h2>
-    <p class="sec-lead">A real person in Peru handwrites your Christmas greeting, adds Peruvian stamps and a Peru postmark, and mails it to anyone you choose, anywhere in the world. $10 USD per card, mailing included.</p>
-    <div class="xmas-grid">
-      <div class="xmas-card">
-        <img src="images/navidad/tarjeta-1.jpg" alt="Christmas card: smiling snowman with a red scarf and a robin on his nose" loading="lazy">
-        <div class="cover-body">
-          <div class="cover-title">Design 1</div>
-          <div class="cover-meta">Snowman and robin</div>
-          <a class="cover-btn" href="https://wa.me/51949494261?text=Hi!%20I%20would%20like%20Christmas%20card%20design%20%231%20(Snowman%20and%20robin).%0ANumber%20of%20cards%3A%20%0ADestination%20country%3A%20" target="_blank" rel="noopener">I&rsquo;d like this one</a>
-        </div>
-      </div>
-      <div class="xmas-card">
-        <img src="images/navidad/tarjeta-2.jpg" alt="Christmas card: Santa in a red sleigh pulled by a reindeer through a snowy forest" loading="lazy">
-        <div class="cover-body">
-          <div class="cover-title">Design 2</div>
-          <div class="cover-meta">Santa&rsquo;s sleigh</div>
-          <a class="cover-btn" href="https://wa.me/51949494261?text=Hi!%20I%20would%20like%20Christmas%20card%20design%20%232%20(Santa's%20sleigh).%0ANumber%20of%20cards%3A%20%0ADestination%20country%3A%20" target="_blank" rel="noopener">I&rsquo;d like this one</a>
-        </div>
-      </div>
-      <div class="xmas-card">
-        <img src="images/navidad/tarjeta-3.jpg" alt="Christmas card: decorated fir tree with a deer, foxes, an owl and a squirrel" loading="lazy">
-        <div class="cover-body">
-          <div class="cover-title">Design 3</div>
-          <div class="cover-meta">Woodland tree</div>
-          <a class="cover-btn" href="https://wa.me/51949494261?text=Hi!%20I%20would%20like%20Christmas%20card%20design%20%233%20(Woodland%20tree).%0ANumber%20of%20cards%3A%20%0ADestination%20country%3A%20" target="_blank" rel="noopener">I&rsquo;d like this one</a>
-        </div>
-      </div>
-      <div class="xmas-card">
-        <img src="images/navidad/tarjeta-4.jpg" alt="Christmas card: angel with a holly wreath on a starry blue night" loading="lazy">
-        <div class="cover-body">
-          <div class="cover-title">Design 4</div>
-          <div class="cover-meta">Angel with wreath</div>
-          <a class="cover-btn" href="https://wa.me/51949494261?text=Hi!%20I%20would%20like%20Christmas%20card%20design%20%234%20(Angel%20with%20wreath).%0ANumber%20of%20cards%3A%20%0ADestination%20country%3A%20" target="_blank" rel="noopener">I&rsquo;d like this one</a>
-        </div>
-      </div>
-      <div class="xmas-card">
-        <img src="images/navidad/tarjeta-5.jpg" alt="Christmas card: classic painting of the Nativity with shepherds" loading="lazy">
-        <div class="cover-body">
-          <div class="cover-title">Design 5</div>
-          <div class="cover-meta">Nativity</div>
-          <a class="cover-btn" href="https://wa.me/51949494261?text=Hi!%20I%20would%20like%20Christmas%20card%20design%20%235%20(Nativity).%0ANumber%20of%20cards%3A%20%0ADestination%20country%3A%20" target="_blank" rel="noopener">I&rsquo;d like this one</a>
-        </div>
-      </div>
-      <div class="xmas-card">
-        <img src="images/navidad/tarjeta-6.jpg" alt="Christmas card: the Three Kings walking toward the star" loading="lazy">
-        <div class="cover-body">
-          <div class="cover-title">Design 6</div>
-          <div class="cover-meta">Three Kings</div>
-          <a class="cover-btn" href="https://wa.me/51949494261?text=Hi!%20I%20would%20like%20Christmas%20card%20design%20%236%20(Three%20Kings).%0ANumber%20of%20cards%3A%20%0ADestination%20country%3A%20" target="_blank" rel="noopener">I&rsquo;d like this one</a>
-        </div>
-      </div>
-    </div>
-    <div class="steps-grid">
-      <div class="step-box"><b>1</b><span>Tell me how many cards, which design, your message and each address, by WhatsApp or email.</span></div>
-      <div class="step-box"><b>2</b><span>I send you a PayPal request to confirm your order.</span></div>
-      <div class="step-box"><b>3</b><span>I handwrite, stamp, postmark and mail each card from Peru.</span></div>
-    </div>
-    <p class="covers-cta"><a href="https://wa.me/51949494261?text=Hi!%20I%20would%20like%20to%20send%20Christmas%20cards%20from%20Peru.%0ANumber%20of%20cards%3A%20%0ADestination%20country%3A%20" target="_blank" rel="noopener">&#x1F4AC; Order Christmas cards</a> &nbsp;&middot;&nbsp; <a href="mailto:perucollector@gmail.com?subject=Christmas%20cards%20from%20Peru">&#x2709;&#xFE0F; Email me</a><br>Sending to several people, or for a company? Tell me how many.</p>
-    <p class="xmas-note">Order by November 15 for delivery before Christmas. Delivery times depend on the destination and the postal service, so earlier is safer. Limited number of cards, each one written by hand.</p>
   </div>
 </section>
 
@@ -904,6 +894,11 @@ for (var i = 0; i < els.length; i++) obs.observe(els[i]);
     });
   }).catch(function(){grid.textContent=''; grid.appendChild(el('div','arch-empty','The catalog could not be loaded right now.'));});
 })();
+</script>
+<script>
+document.querySelectorAll('.zm').forEach(function(z){var i=z.querySelector('img');
+z.addEventListener('mousemove',function(e){var r=z.getBoundingClientRect();i.style.transformOrigin=((e.clientX-r.left)/r.width*100)+'% '+((e.clientY-r.top)/r.height*100)+'%';});
+z.addEventListener('mouseleave',function(){i.style.transformOrigin='50% 50%';});});
 </script>
 </body>
 </html>
