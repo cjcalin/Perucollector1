@@ -11,7 +11,8 @@ Language: English (Spanish also accepted)
 - The Vault: scans of Peruvian first day covers and other philatelic material, catalogued piece by piece with structured data sheets. The public preview index is open. Full-resolution scans and complete data sheets are for members, and for software or AI agents with an API key. Access is by request.
 - The Appraisal Desk: written valuations of stamps, covers, postal history, first day covers, collections and lots. Send clear scans or photos; terms are confirmed before anything is sent.
 - Pope Leo XIV apostolic visit to Peru (11 to 16 November 2026): Peru issued a souvenir sheet of four stamps and an official postcard. (a) Private sale of the new pieces (souvenir sheet, official postcard), by request. (b) Mailing service from Peru: an envelope franked with the souvenir sheet stamps, or the official postcard franked with two postage stamps. Prices and availability are confirmed on request by WhatsApp or email; first day cover (SPD) on request.
-- The Gallery and The Showcase: restored vintage Peruvian advertising, and Peru covers with recent stamps. Items are requested through the site.
+- The Showcase: Peru covers with recent stamps. Items are requested through the site.
+- The Coin Desk: bimetallic 5 soles coins of Peru, 2026 (UNC), sold individually or as a wrapped roll of 20. Private sale: prices and availability on request by WhatsApp.
 
 ## Machine-readable data
 
